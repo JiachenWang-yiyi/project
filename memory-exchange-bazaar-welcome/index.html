@@ -1,0 +1,2178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Exchange Bazaar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="scanline"></div>
+
+    <section class="entry home-entry active" id="entry-home">
+        <div class="home-shell">
+            <div class="home-glass home-glass-left" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <svg class="home-orbit home-orbit-left" viewBox="0 0 100 128" preserveAspectRatio="none">
+                    <ellipse cx="50" cy="64" rx="43" ry="56" pathLength="100" />
+                </svg>
+            </div>
+            <div class="home-glass home-glass-right" aria-hidden="true">
+                <span></span>
+                <span></span>
+                <span></span>
+                <svg class="home-orbit home-orbit-right" viewBox="0 0 100 125" preserveAspectRatio="none">
+                    <ellipse class="orbit-cyan" cx="50" cy="62.5" rx="43" ry="55" pathLength="100" />
+                    <ellipse class="orbit-gold" cx="50" cy="62.5" rx="43" ry="55" pathLength="100" />
+                </svg>
+            </div>
+            <div class="home-content">
+                <div class="home-pill"><span>↗</span> Memory Archive Platform</div>
+                <h1 class="home-title">Memory<br><span>Exchange</span><br>Bazaar</h1>
+                <p class="home-sub">A cross-generational memory platform where objects, places and stories become living
+                    archives.</p>
+                <div class="home-actions">
+                    <button class="btn home-start" onclick="goEntry('entry-role')">Enter Bazaar <span>→</span></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="entry role-entry" id="entry-role">
+        <button class="back-entry" onclick="goEntry('entry-home')" aria-label="Back">←</button>
+        <div class="role-bg"></div>
+        <div class="role-date">BETA · 2026</div>
+        <div class="role-wrap">
+            <div class="role-head">
+                <h1>Choose how you<br><span class="role-title-line">enter the <span class="role-title-gradient">memory
+                            world.</span></span></h1>
+                <p>Each role shapes what the user can collect, contribute and co-create inside the bazaar.</p>
+            </div>
+            <div class="role-columns">
+                <article class="role-card role-personal" onclick="enterApp('Personal User')">
+                    <div class="role-illustration" aria-hidden="true">
+                        <img src="./img/role-personal.png" alt="">
+                    </div>
+                    <div class="role-num">01</div>
+                    <h2 class="role-top-title">Personal User</h2>
+                    <div class="role-copy">
+                        <h2>Personal User</h2>
+                        <p>Build a personal archive of objects, stories, locations and eras.</p>
+                        <div class="role-list"><span>Upload memory objects</span><span>AI story
+                                classification</span><span>Object, map and timeline views</span></div><button
+                            class="btn btn-dark-outline">Enter as Personal User</button>
+                    </div>
+                </article>
+                <article class="role-card role-participant" onclick="enterApp('Participant')">
+                    <div class="role-illustration" aria-hidden="true">
+                        <img src="./img/role-participant.png" alt="">
+                    </div>
+                    <div class="role-num">02</div>
+                    <h2 class="role-top-title">Participant</h2>
+                    <div class="role-copy">
+                        <h2>Participant</h2>
+                        <p>Browse public memories, open blind boxes and follow trails.</p>
+                        <div class="role-list"><span>Explore Memory Market</span><span>Open sealed
+                                memories</span><span>Follow live trails</span></div><button
+                            class="btn btn-dark-outline">Enter as Participant</button>
+                    </div>
+                </article>
+                <article class="role-card role-community" onclick="enterApp('Community User')">
+                    <div class="role-illustration" aria-hidden="true">
+                        <img src="./img/role-community.png" alt="">
+                    </div>
+                    <div class="role-num">03</div>
+                    <h2 class="role-top-title">Community User</h2>
+                    <div class="role-copy">
+                        <h2>Community User</h2>
+                        <p>Curate public memory trails, host community events and invite co-creation.</p>
+                        <div class="role-list"><span>Host AR memory trails</span><span>Curate fusion
+                                events</span><span>Connect generations</span></div><button
+                            class="btn btn-dark-outline">Enter as Community User</button>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="entry login-entry" id="entry-login">
+        <button class="back-entry" onclick="goEntry('entry-role')" aria-label="Back">←</button>
+        <div class="login-shell">
+            <div class="login-brand"><span class="login-brand-mark"></span><strong>Memory <b>Exchange</b> <em>Bazaar</em></strong></div>
+            <section class="login-welcome">
+                <div class="kicker green">Welcome back</div>
+                <h1>Great to see<br>you <span>again.</span></h1>
+                <p>Sign in to continue into Memory Exchange Bazaar with your selected role.</p>
+                <div class="login-line-art" aria-hidden="true"><i></i><i></i><i></i><i></i><b></b><b></b></div>
+                <div class="login-benefits">
+                    <article><i class="benefit-shield"></i><strong>Your data, safe</strong><small>Protected memory permissions</small></article>
+                    <article><i class="benefit-people"></i><strong>Community first</strong><small>Built for residents and curators</small></article>
+                    <article><i class="benefit-ai"></i><strong>AI-powered</strong><small>Smarter connections, richer memories</small></article>
+                </div>
+            </section>
+            <form class="login-panel" id="loginForm" onsubmit="submitLogin(event)">
+                <div class="kicker green" id="loginRole">Selected role</div>
+                <h2 id="loginFormTitle">Sign in to your archive.</h2>
+                <label>Email</label>
+                <div class="login-input-wrap email-input"><input id="loginEmail" type="email" value="memory@bazaar.com" aria-label="Email" required></div>
+                <label>Password</label>
+                <div class="login-input-wrap password-input"><input id="loginPassword" type="password" value="memorybazaar" aria-label="Password" required minlength="6"></div>
+                <button type="button" class="forgot-password" onclick="showLoginNotice('Password reset instructions sent to your email.')">Forgot password?</button>
+                <button class="login-submit" id="loginSubmitButton" type="submit"><span>Log In</span><b>→</b></button>
+                <p class="login-notice" id="loginNotice" role="status"></p>
+            </form>
+        </div>
+    </section>
+
+    <div class="app" id="app">
+        <aside class="rail">
+            <div class="logo"><img src="./img/logo.png" alt="Memory Exchange Bazaar logo"></div>
+            <button class="nav active" data-view="plaza" title="Home"><svg viewBox="0 0 24 24">
+                    <path d="M3 11l9-8 9 8" />
+                    <path d="M5 10v10h14V10" />
+                </svg></button>
+            <button class="nav" data-view="rolehome" title="Memory Match Home"><svg viewBox="0 0 24 24">
+                    <path d="M4 7h6v10H4z" />
+                    <path d="M14 7h6v10h-6z" />
+                    <path d="M10 12h4" />
+                </svg></button>
+            <button class="nav" data-view="participant" title="Participant Hub"><svg viewBox="0 0 24 24">
+                    <path d="M3 11l9-8 9 8" />
+                    <path d="M5 10v10h14V10" />
+                </svg></button>
+            <button class="nav" data-view="community" title="Community Hub"><svg viewBox="0 0 24 24">
+                    <path d="M3 11l9-8 9 8" />
+                    <path d="M5 10v10h14V10" />
+                </svg></button>
+            <button class="nav" data-view="archive" title="Archive"><svg viewBox="0 0 24 24">
+                    <path d="M4 5c3-2 7-2 8 0v14c-1-2-5-2-8 0z" />
+                    <path d="M20 5c-3-2-7-2-8 0v14c1-2 5-2 8 0z" />
+                </svg></button>
+            <button class="nav" data-view="timeline" title="Timeline Mode"><svg viewBox="0 0 24 24">
+                    <path d="M4 12h16" />
+                    <circle cx="7" cy="12" r="2" />
+                    <circle cx="12" cy="12" r="2" />
+                    <circle cx="17" cy="12" r="2" />
+                </svg></button>
+            <button class="nav" data-view="objectspace" title="Object Space"><svg viewBox="0 0 24 24">
+                    <path d="M12 3l8 4.5v9L12 21l-8-4.5v-9z" />
+                    <path d="M12 12l8-4.5" />
+                    <path d="M12 12v9" />
+                    <path d="M12 12L4 7.5" />
+                </svg></button>
+            <button class="nav" data-view="market" title="Market"><svg viewBox="0 0 24 24">
+                    <rect x="3" y="3" width="8" height="8" />
+                    <rect x="13" y="3" width="8" height="8" />
+                    <rect x="3" y="13" width="8" height="8" />
+                    <rect x="13" y="13" width="8" height="8" />
+                </svg></button>
+            <button class="nav" data-view="blindmatch" title="Blind Box Match"><svg viewBox="0 0 24 24">
+                    <rect x="4" y="5" width="7" height="14" rx="2" />
+                    <rect x="13" y="5" width="7" height="14" rx="2" />
+                    <path d="M11 12h2" />
+                </svg></button>
+            <button class="nav" data-view="matched" title="Matched Memory"><svg viewBox="0 0 24 24">
+                    <path d="M7 12l3 3 7-7" />
+                    <circle cx="12" cy="12" r="9" />
+                </svg></button>
+            <button class="nav" data-view="trails" title="Memory Trails"><svg viewBox="0 0 24 24">
+                    <path d="M12 21s7-6.4 7-12a7 7 0 10-14 0c0 5.6 7 12 7 12z" />
+                    <circle cx="12" cy="9" r="2.4" />
+                </svg></button>
+            <button class="nav" data-view="ar" title="AR Scene"><svg viewBox="0 0 24 24">
+                    <path d="M4 8V5a1 1 0 011-1h3" />
+                    <path d="M16 4h3a1 1 0 011 1v3" />
+                    <path d="M20 16v3a1 1 0 01-1 1h-3" />
+                    <path d="M8 20H5a1 1 0 01-1-1v-3" />
+                    <circle cx="12" cy="12" r="3" />
+                </svg></button>
+            <button class="nav" data-view="upload" title="Upload"><svg viewBox="0 0 24 24">
+                    <path d="M12 3v12" />
+                    <path d="M7 8l5-5 5 5" />
+                    <path d="M4 20h16" />
+                </svg></button>
+            <button class="nav" data-view="shelf" title="AI Shelf"><svg viewBox="0 0 24 24">
+                    <path d="M4 6h16" />
+                    <path d="M4 12h16" />
+                    <path d="M4 18h16" />
+                    <path d="M7 6v12" />
+                    <path d="M17 6v12" />
+                </svg></button>
+            <button class="nav" data-view="memoryfusion" title="Memory Fusion"><svg viewBox="0 0 24 24">
+                    <circle cx="7" cy="8" r="3" />
+                    <circle cx="17" cy="8" r="3" />
+                    <circle cx="12" cy="17" r="3" />
+                    <path d="M9.5 10.5l2 3.5" />
+                    <path d="M14.5 10.5l-2 3.5" />
+                </svg></button>
+            <button class="nav" data-view="tasks" title="Tasks"><svg viewBox="0 0 24 24">
+                    <path d="M5 6h14" />
+                    <path d="M5 12h14" />
+                    <path d="M5 18h10" />
+                    <path d="M4 6l1 1 2-2" />
+                </svg></button>
+            <button class="nav" data-view="relations" title="Relations"><svg viewBox="0 0 24 24">
+                    <circle cx="8" cy="8" r="3" />
+                    <circle cx="17" cy="11" r="3" />
+                    <path d="M2 21c0-3.5 2.8-6 6-6" />
+                    <path d="M11 21c0-3.5 2.8-6 6-6" />
+                </svg></button>
+            <button class="nav" data-view="chatmode" title="Chat"><svg viewBox="0 0 24 24">
+                    <path d="M4 5h16v10H8l-4 4z" />
+                    <path d="M8 9h8" />
+                    <path d="M8 12h5" />
+                </svg></button>
+            <button class="nav" data-view="activity" title="Activity"><svg viewBox="0 0 24 24">
+                    <rect x="4" y="5" width="16" height="14" rx="2" />
+                    <path d="M8 3v4" />
+                    <path d="M16 3v4" />
+                    <path d="M8 12h8" />
+                    <path d="M8 16h5" />
+                </svg></button>
+            <button class="nav" data-view="achievements" title="Achievements"><svg viewBox="0 0 24 24">
+                    <path d="M8 4h8v5a4 4 0 01-8 0z" />
+                    <path d="M6 5H3v2a4 4 0 004 4" />
+                    <path d="M18 5h3v2a4 4 0 01-4 4" />
+                    <path d="M12 13v5" />
+                    <path d="M9 21h6" />
+                </svg></button>
+            <button class="nav" data-view="connections" title="Connections"><svg viewBox="0 0 24 24">
+                    <circle cx="8" cy="8" r="3" />
+                    <circle cx="17" cy="11" r="3" />
+                    <path d="M2 21c0-3.5 2.8-6 6-6" />
+                    <path d="M11 21c0-3.5 2.8-6 6-6" />
+                </svg></button>
+            <div class="rail-spacer"></div>
+            <button class="nav" onclick="logout()" title="Logout"><svg viewBox="0 0 24 24">
+                    <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" />
+                    <path d="M16 17l5-5-5-5" />
+                    <path d="M21 12H9" />
+                </svg></button>
+        </aside>
+
+        <main class="stage">
+            <header class="top">
+                <div class="top-left">
+                    <div class="top-brand">MEMORY EXCHANGE BAZAAR</div>
+                    <div class="top-location" id="topHint">Live memory world</div>
+                </div>
+                <div class="profile-mini"><span id="roleName">Personal User</span><img
+                        src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop"
+                        alt="profile"></div>
+            </header>
+
+            <section class="view active" id="plaza">
+                <div class="plaza-grid">
+                    <div class="plaza-hero">
+                        <div class="plaza-copy">
+                            <div class="kicker green">Memory flow</div>
+                            <h1>Record, classify, exchange and co-create <span>memories.</span></h1>
+                            <p>Upload an object, photo, voice or place record. AI turns it into a memory token, then
+                                opens Object, Timeline, Map and Community modes.</p><button class="btn btn-accent"
+                                onclick="showView('upload')">Start Memory Flow</button>
+                        </div>
+                        <img class="plaza-hero-art" src="./img/archive-memory-box.png" alt="">
+                    </div>
+                    <div class="plaza-side">
+                        <div class="side-card service-card">
+                            <div class="kicker">Service process</div>
+                            <h3>From private record to shared memory asset.</h3>
+                            <div class="flow-mini">
+                                <div><span>01</span><img src="./img/process-upload.svg" alt=""><strong>Upload
+                                        File</strong>
+                                    <p>Photo, audio, object or place.</p>
+                                </div>
+                                <div><span>02</span><img src="./img/process-ai.svg" alt=""><strong>AI Identify</strong>
+                                    <p>Era, emotion, type and location.</p>
+                                </div>
+                                <div><span>03</span><img src="./img/process-mode.svg" alt=""><strong>Generate
+                                        Mode</strong>
+                                    <p>Object, Timeline, Map, Maze.</p>
+                                </div>
+                                <div><span>04</span><img src="./img/process-share.svg" alt=""><strong>Share /
+                                        Exchange</strong>
+                                    <p>Authorize co-creation.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="side-card task-card">
+                            <div class="kicker green">Tasks & permissions</div>
+                            <h3>Unlock more through memory actions.</h3>
+                            <p>Daily records, challenges and achievements increase access to blind boxes, co-creation
+                                rooms and community activity tools.</p>
+                            <div class="live-trail">
+                                <div class="trail-row"><img src="./img/task-daily.svg" alt="">Daily record streak
+                                    <span>+20 pts</span>
+                                </div>
+                                <div class="trail-row"><img src="./img/task-authorize.svg" alt="">Authorize one memory
+                                    <span>+35 pts</span>
+                                </div>
+                                <div class="trail-row"><img src="./img/task-community.svg" alt="">Join community
+                                    activity <span>+60 pts</span></div>
+                            </div>
+                            <img class="task-art" src="./img/task-trophy.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="view" id="archive">
+                <div class="archive-layout">
+                    <aside class="archive-panel">
+                        <div class="kicker">Personal recollections</div>
+                        <h2>Generated memory modes</h2>
+                        <p>After upload and AI identification, memories become structured modes for browsing,
+                            editing and exchange.</p>
+                        <div class="mode-list">
+                            <span onclick="showView('timeline')">Timeline</span><span
+                                onclick="showView('objectspace')">Object</span><span>Classification</span><span
+                                onclick="showView('trails')">Map</span><span
+                                onclick="showView('objectspace')">Maze</span>
+                        </div>
+                        <img class="archive-hero-art" src="./img/archive-memory-box.png" alt="">
+                    </aside>
+                    <div>
+                        <div class="mode-board">
+                            <article onclick="showView('timeline')">
+                                <div class="kicker green">Timeline Mode</div>
+                                <h3>Life chapters unfold like a book.</h3>
+                                <p>AI arranges memories by time, era and emotional intensity.</p>
+                                <img src="./img/mode-timeline.png" alt="">
+                            </article>
+                            <article onclick="showView('objectspace')">
+                                <div class="kicker green">Object Mode</div>
+                                <h3>Objects become NFC-like anchors.</h3>
+                                <p>Each object links image, audio, owner story and exchange permission.</p>
+                                <img src="./img/mode-object.png" alt="">
+                            </article>
+                            <article onclick="showView('trails')">
+                                <div class="kicker green">Map Mode</div>
+                                <h3>Places reveal overlapping memories.</h3>
+                                <p>Users can find memories from different years in the same location.</p>
+                                <img src="./img/mode-map.png" alt="">
+                            </article>
+                        </div>
+                        <div class="object-list" id="objectList"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="view" id="timeline">
+                <div class="timeline-page">
+                    <div class="timeline-actions">
+                        <button class="timeline-back" id="timelineBackButton" onclick="returnFromSharedMode()">← Back</button>
+                        <div class="timeline-tools">
+                            <label class="timeline-search">
+                                <svg viewBox="0 0 24 24">
+                                    <circle cx="11" cy="11" r="7" />
+                                    <path d="M16 16l4 4" />
+                                </svg>
+                                <input type="search" placeholder="Search memories...">
+                            </label>
+                            <button class="timeline-filter-btn" aria-label="Filter timeline">
+                                <svg viewBox="0 0 24 24">
+                                    <path d="M4 7h16" />
+                                    <path d="M4 17h16" />
+                                    <circle cx="9" cy="7" r="2" />
+                                    <circle cx="15" cy="17" r="2" />
+                                </svg>
+                            </button>
+                            <button class="timeline-add" id="timelineRoleAction" onclick="runTimelineRoleAction()">+ Add Memory</button>
+                        </div>
+                    </div>
+                    <div class="timeline-heading">
+                        <h2 id="timelineRoleTitle">My Timeline</h2>
+                        <p id="timelineRoleDescription">A journey through my collected memories.</p>
+                    </div>
+                    <div class="timeline-scroll" id="timelineScroll">
+                        <div class="timeline-stage" id="timelineStage">
+                            <div class="timeline-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="view" id="objectspace">
+                <div class="feature-layout objectspace-layout">
+                    <aside class="feature-panel dark">
+                        <div class="kicker green">Object Space Mode</div>
+                        <h2>Many objects gather into one shared memory space.</h2>
+                        <p>Every cut-out belongs to a different person, family or generation. Together they form a
+                            community archive rather than a collection of separate cards.</p>
+                        <div class="mode-list object-mode-tabs">
+                            <span>10 objects</span><span>8 contributors</span><span>5 eras</span><span>3 places</span>
+                        </div>
+                    </aside>
+                    <div class="objectspace-board">
+                        <header class="object-collage-head">
+                            <div><span>Community object field</span><strong>Shared objects, overlapping lives.</strong></div>
+                            <p>Select an object to reveal who contributed it and which memories it connects.</p>
+                        </header>
+                        <div class="object-collage" aria-label="Shared community memory objects">
+                            <button class="cutout-object cutout-phone" onclick="selectObjectMemory(0, this)"><img src="img/object-phone.png" alt="Late 1990s mobile phone"><i>1999</i></button>
+                            <button class="cutout-object cutout-radio active" onclick="selectObjectMemory(1, this)"><img src="img/object-radio.png" alt="Family tabletop radio"><i>1985</i></button>
+                            <button class="cutout-object cutout-tv" onclick="selectObjectMemory(2, this)"><img src="img/object-tv.png" alt="Old CRT television"><i>1978</i></button>
+                            <button class="cutout-object cutout-computer" onclick="selectObjectMemory(3, this)"><img src="img/object-computer.png" alt="Early home computer"><i>1987</i></button>
+                            <button class="cutout-object cutout-chair" onclick="selectObjectMemory(4, this)"><img src="img/object-chair.png" alt="Worn wooden chair"><i>1962</i></button>
+                            <button class="cutout-object cutout-book" onclick="selectObjectMemory(5, this)"><img src="img/object-book.png" alt="Old family book"><i>1954</i></button>
+                            <button class="cutout-object cutout-tin" onclick="selectObjectMemory(6, this)"><img src="img/object-tin.png" alt="Vintage tea tin"><i>1971</i></button>
+                            <button class="cutout-object cutout-clock" onclick="selectObjectMemory(7, this)"><img src="img/object-clock.png" alt="Round alarm clock"><i>1968</i></button>
+                            <button class="cutout-object cutout-lamp" onclick="selectObjectMemory(8, this)"><img src="img/object-lamp.png" alt="Old table lamp"><i>1959</i></button>
+                            <button class="cutout-object cutout-fan" onclick="selectObjectMemory(9, this)"><img src="img/object-fan.png" alt="Vintage desk fan"><i>1975</i></button>
+                            <div class="collage-ground"></div>
+                        </div>
+                        <aside class="object-community-detail" id="objectCommunityDetail">
+                            <span id="objectDetailKicker">Family · 1985</span>
+                            <strong id="objectDetailTitle">Grandmother’s radio</strong>
+                            <p id="objectDetailText">Three contributors connect evening songs, weather reports and family dinners through the same radio.</p>
+                            <div class="object-contributors"><b>J</b><b>M</b><b>O</b><small id="objectDetailPeople">3 contributors</small></div>
+                            <button class="object-role-action" id="objectRoleAction" onclick="runObjectRoleAction()">Leave a memory</button>
+                        </aside>
+                        <button class="object-map-orbit" onclick="showView('trails')" aria-label="Open these objects on the memory map">
+                            <span></span><i></i><i></i><i></i><strong>Map</strong>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="view" id="market">
+                <div class="exchange-layout">
+                    <aside class="blind-box">
+                        <div class="kicker green">Memory blind box</div>
+                        <h2>Open an authorized memory from another life.</h2>
+                        <p>The blind box can be restricted or open, depending on the uploader's sharing settings. It
+                            activates memory exchange and digital borrowing.</p>
+                        <button class="btn btn-accent" onclick="showView('blindmatch')">Open Blind Box</button>
+                    </aside>
+                    <div class="market-grid" id="marketGrid"></div>
+                </div>
+            </section>
+
+            <section class="view" id="blindmatch">
+                <div class="blindbox-page">
+                    <header class="blindbox-top">
+                        <div class="blindbox-tabs"><button class="active" data-blind-tab="match"
+                                onclick="switchBlindBoxTab('match')">Blind Box</button><button data-blind-tab="mybox"
+                                onclick="switchBlindBoxTab('mybox')">My Box</button><button data-blind-tab="history"
+                                onclick="switchBlindBoxTab('history')">History</button></div>
+                        <div class="blindbox-profile"><span>★ 120</span><button>♧</button><img
+                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=160&auto=format&fit=crop"
+                                alt=""></div>
+                    </header>
+                    <div class="blindbox-stage">
+                        <article class="blind-memory-card your-memory">
+                            <div class="blind-pill">Your Memory</div>
+                            <img class="blind-memory-photo"
+                                src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=900&auto=format&fit=crop"
+                                alt="Grandmother's radio memory">
+                            <div class="timeline-card-kicker green-text">Family · 1985</div>
+                            <h2>Grandmother's radio</h2>
+                            <p>⌖ Chengdu, China</p>
+                            <div class="blind-card-foot"><span>👩🏻‍🦱👩🏻‍🦰👩🏻 From your collection</span><b>♡</b>
+                            </div>
+                        </article>
+                        <div class="blindbox-center">
+                            <div class="blindbox-arrows"><i>→</i><i>←</i></div>
+                            <div class="blindbox-status" id="exchangeStatus">Finding a match...</div>
+                            <button class="blindbox-open" id="blindRevealBtn" onclick="revealBlindBox()">Open blind
+                                box</button>
+                        </div>
+                        <article class="blind-memory-card mystery-match" id="mysteryCard">
+                            <div class="blind-sparkles">✦ ✧ ✦</div>
+                            <div class="blind-question" id="blindQuestion">?</div>
+                            <img class="blind-memory-photo" id="blindMatchImage" src="" alt="">
+                            <div class="timeline-card-kicker purple" id="blindMatchKicker">Your memory match</div>
+                            <h2 id="blindMatchTitle">is on the way!</h2>
+                            <p id="blindMatchMeta">Randomly open a restricted or unrestricted memory authorized by its
+                                uploader.</p>
+                            <div class="blind-card-foot"><span id="blindMatchScore">Match pending</span><b>♡</b></div>
+                        </article>
+                    </div>
+                    <div class="blindbox-exchange" id="exchangePanel">
+                        <div class="exchange-slots">
+                            <div class="exchange-slot mine"><small>My offer</small><strong
+                                    id="exchangeMineTitle">Grandmother's radio</strong></div>
+                            <div class="exchange-arrows" id="exchangeArrows">⇄</div>
+                            <div class="exchange-slot theirs"><small>Matched memory</small><strong
+                                    id="exchangeTheirTitle">Waiting</strong></div>
+                        </div>
+                        <div class="exchange-actions">
+                            <button onclick="requestMemoryExchange()">Request exchange</button>
+                            <button onclick="acceptMemoryExchange()">Accept</button>
+                            <button onclick="completeMemoryExchange()">Complete</button>
+                            <button id="blindExploreBtn" onclick="showMatchedMemory()">Explore memory</button>
+                        </div>
+                    </div>
+                    <div class="blindbox-tab-panel hidden" id="myBoxPanel">
+                        <div class="blindbox-panel-head">
+                            <div><span>My Box</span>
+                                <h2>Authorized memories I can borrow.</h2>
+                            </div>
+                            <button onclick="switchBlindBoxTab('match')">Open another box</button>
+                        </div>
+                        <div class="blindbox-mini-grid">
+                            <article onclick="openModal(2)"><img
+                                    src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=900&auto=format&fit=crop"
+                                    alt=""><span>Family · owned</span><strong>Grandmother's radio</strong>
+                                <p>Your source memory for blind box matching.</p>
+                            </article>
+                            <article onclick="openModal(5)"><img
+                                    src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=900&auto=format&fit=crop"
+                                    alt=""><span>Borrowed · 24h</span><strong>Old shopfront sign</strong>
+                                <p>Authorized exchange memory opened through blind box.</p>
+                            </article>
+                            <article onclick="openModal(4)"><img
+                                    src="https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=900&auto=format&fit=crop"
+                                    alt=""><span>Request pending</span><strong>The letter never sent</strong>
+                                <p>Restricted memory waiting for owner permission.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="blindbox-tab-panel hidden" id="historyPanel">
+                        <div class="blindbox-panel-head">
+                            <div><span>History</span>
+                                <h2>Blind box exchange timeline.</h2>
+                            </div>
+                            <button onclick="switchBlindBoxTab('match')">Back to matching</button>
+                        </div>
+                        <div class="blindbox-history-list">
+                            <article><b>Today</b><strong>Old shopfront sign matched</strong>
+                                <p>92% similarity · authorized exchange · 3 contributors available</p><em>Ready</em>
+                            </article>
+                            <article><b>Yesterday</b><strong>Radio memory preview opened</strong>
+                                <p>87% similarity · family archive preview · owner permission requested</p>
+                                <em>Pending</em>
+                            </article>
+                            <article><b>Jul 15</b><strong>Train ticket borrowed</strong>
+                                <p>Public travel trail · digital borrowing completed</p><em>Complete</em>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="view" id="trails">
+                <div class="trails-layout">
+                    <div class="map-panel">
+                        <div class="map-overlay"></div>
+                        <div class="beacon b1" onclick="openBigBenMemory()" role="button" tabindex="0"
+                            onkeydown="if(event.key === 'Enter' || event.key === ' ') openBigBenMemory()"><span>Big Ben</span></div>
+                        <div class="beacon b2" onclick="openModal(1)"><span>Station memory</span></div>
+                        <div class="beacon b3" onclick="openModal(2)"><span>Old shopfront</span></div>
+                    </div>
+                    <aside class="trail-sidebar">
+                        <div class="kicker green" id="trailRoleKicker">Community mode</div>
+                        <h2 id="trailRoleTitle">Revive memories through place-based activities.</h2>
+                        <p id="trailRoleDescription">Community users can curate map modes, temporal overlaps, object evolution routes and offline
+                            treasure hunts.</p>
+                        <div class="trail-mini" id="communityTrailStatus">
+                            <h4>Active route</h4>
+                            <p>Big Ben · temporal overlap · 1953 / 2026 · co-creation enabled</p>
+                        </div>
+                        <div class="community-modes">
+                            <span>Impression Moment</span><span>Treasure Hunt</span><span>Event Guide</span><span>Object
+                                Evolution</span>
+                        </div><button class="btn btn-accent" id="trailPrimaryButton" style="margin-top:24px;width:100%"
+                            onclick="openTrailExperience()">Open community activity</button>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="view ar-scene" id="ar">
+                <div class="ar-canvas">
+                    <button class="ar-back" onclick="showView('trails')" aria-label="Back to community map">←</button>
+                    <div class="ar-brief">
+                        <div class="kicker green">Big Ben AR mode</div>
+                        <h2>Memory hunt around Westminster Bridge.</h2>
+                        <p>Scan the Big Ben street view, reveal layered public memories, collect fragments and invite
+                            others to co-create a shared London trail.</p>
+                        <div class="ar-guide-tags"><span>Big Ben</span><span>Westminster Bridge</span><span>Temporal
+                                Overlap</span></div>
+                    </div>
+                    <div class="device-frame">
+                        <div class="device-glass">
+                            <div class="device-top">
+                                <button onclick="showView('trails')">← Back</button>
+                                <div class="device-status" id="arStatus">Big Ben AR · Scan active</div>
+                                <div class="device-user">◎</div>
+                            </div>
+                            <img class="streetview-photo" src="./img/big-ben-streetview.png" alt="Big Ben street view">
+                            <div class="big-ben-scene" aria-hidden="true">
+                                <div class="thames"></div>
+                                <div class="bridge"></div>
+                                <div class="big-ben-tower"><span></span></div>
+                                <div class="street-lights"></div>
+                            </div>
+                            <div class="historic-layer" id="historicLayer"></div>
+                            <div class="scan-sweep" id="scanSweep"></div>
+                            <div class="ar-chat ar-chat-one"><strong>AR</strong><span>Historic photo layer found near
+                                    Elizabeth Tower.</span></div>
+                            <div class="ar-chat ar-chat-two"><strong>ME</strong><span>I collected a bridge memory from
+                                    1953. Sending it to the trail.</span></div>
+                            <div class="ar-chat ar-chat-three"><strong>LDN</strong><span>Someone added a New Year bell
+                                    recording here.</span></div>
+                            <button class="ar-hotspot hs1 active" onclick="selectArMemory(0)"
+                                aria-label="Open Big Ben memory"></button>
+                            <button class="ar-hotspot hs2" onclick="selectArMemory(1)"
+                                aria-label="Open Westminster Bridge memory"></button>
+                            <button class="ar-hotspot hs3" onclick="selectArMemory(2)"
+                                aria-label="Open Thames memory"></button>
+                            <button class="ar-hotspot hs4" onclick="selectArMemory(3)"
+                                aria-label="Open co-creation marker"></button>
+                            <article class="ar-memory-card">
+                                <div class="kicker" id="arMemoryKicker">Big Ben · 1953</div>
+                                <h2 id="arMemoryTitle">Westminster Clock Chime</h2>
+                                <p id="arMemoryMeta">Audio note recorded near Elizabeth Tower.</p>
+                                <p id="arMemoryText">A layered memory is attached to the present-day street view. Listen
+                                    to the clock chime, collect the fragment, or invite another user to add their view.
+                                </p>
+                                <div class="ar-card-actions">
+                                    <button onclick="openModal(0)">Explore more Info</button>
+                                    <button id="collectBtn" onclick="collectMemory()">Collect</button>
+                                    <button onclick="showView('connections')">Co-create</button>
+                                </div>
+                            </article>
+                            <div class="ar-mini-map">
+                                <span class="active"></span><span></span><span></span><span></span>
+                            </div>
+                            <div class="ar-settings-panel" id="arSettingsPanel">
+                                <strong>AR Settings</strong>
+                                <button onclick="toggleHistoricLayer()">Historical layer</button>
+                                <button onclick="scanBigBen()">Rescan scene</button>
+                                <button onclick="showView('connections')">Open co-create room</button>
+                            </div>
+                            <div class="ar-actions"><button onclick="showView('trails')" title="Map">⌂</button><button
+                                    onclick="toggleHistoricLayer()" title="Historical layer">◐</button><button
+                                    class="active" onclick="scanBigBen()" title="Scan">◎</button><button
+                                    onclick="nextArMemory()" title="Next memory">◌</button><button
+                                    onclick="toggleArSettings()" title="Settings">⚙</button></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="view" id="upload">
+                <div class="upload-space">
+                    <div class="drop-zone">
+                        <div class="upload-main"><img id="uploadPreview"
+                                src="https://images.unsplash.com/photo-1517420879524-86d64ac2f339?q=80&w=700&auto=format&fit=crop"
+                                alt="old camera">
+                            <h2>Create a memory token</h2>
+                            <p>Upload photos, recordings, spaces or digitized objects. The system turns fixed memories
+                                into structured assets for personal records and community co-creation.</p>
+                            <div class="upload-actions">
+                                <label class="btn btn-accent upload-btn" for="memoryUpload">Upload image</label>
+                                <input id="memoryUpload" type="file" accept="image/*,audio/*,video/*"
+                                    onchange="handleMemoryUpload(event)">
+                                <button class="btn btn-outline analyse-btn" onclick="analyse()">Analyse with AI</button>
+                            </div>
+                            <div class="upload-steps">
+                                <span>01 Upload information</span>
+                                <span>02 Edit info & AI recognition</span>
+                                <span>03 Generation mode</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="view" id="shelf">
+                <div class="shelf-page">
+                    <div class="memory-shelf shelf-page-board active" id="memoryShelf">
+                        <div class="shelf-head"><span>AI memory shelf</span><strong>Generated object cards</strong>
+                        </div>
+                        <div class="shelf-grid">
+                            <article class="shelf-image-card"><img id="shelfImg"
+                                    src="https://images.unsplash.com/photo-1517420879524-86d64ac2f339?q=80&w=700&auto=format&fit=crop"
+                                    alt="">
+                                <div><span>Object</span><strong>Shopfront photo</strong>
+                                    <p>Image fragment separated from the uploaded memory and ready as an object card.
+                                    </p>
+                                </div>
+                            </article>
+                            <article class="shelf-text-card"><span>Era</span><strong>Late 1990s</strong>
+                                <p>AI estimates time, cultural context and emotional tone.</p>
+                            </article>
+                            <article class="shelf-text-card"><span>Place</span><strong>School corner shop</strong>
+                                <p>Location anchor prepared for map view and AR trail discovery.</p>
+                            </article>
+                            <article class="shelf-text-card"><span>Class</span><strong>Daily object · nostalgia</strong>
+                                <p>Category is ready for Object, Timeline and Exchange modes.</p>
+                            </article>
+                            <article class="shelf-text-card"><span>Summary</span><strong>After-school snack
+                                    memory</strong>
+                                <p>Story text has been extracted into a readable memory note.</p>
+                            </article>
+                            <article class="shelf-text-card"><span>Match</span><strong>42 similar memories</strong>
+                                <p>Related memories can be opened through exchange permission.</p>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="form-panel shelf-ai-panel">
+                        <div class="kicker green">AI Weaver</div>
+                        <div class="shelf-panel-title">The corner shop after school</div>
+                        <p class="shelf-panel-desc">A small shop near school where we bought snacks, stickers and bubble
+                            gum in the late 1990s.</p>
+                        <div class="ai-result" id="aiResult">
+                            <div class="ai-row"><span>Object</span><strong>Shopfront photo</strong></div>
+                            <div class="ai-row"><span>Era</span><strong>1990s</strong></div>
+                            <div class="ai-row"><span>Emotion</span><strong>Nostalgia</strong></div>
+                            <div class="ai-row"><span>Match</span><strong>42 similar memories</strong></div>
+                            <div class="ai-breakdown">
+                                <strong>AI decomposition</strong>
+                                <span>Object extracted</span><span>Text summary generated</span><span>Category
+                                    ready</span><span>Shelf view built</span>
+                            </div>
+                            <div class="generation-options">
+                                <button onclick="completePersonalFlow('objectspace')">Object</button><button
+                                    onclick="completePersonalFlow('timeline')">Timeline</button><button
+                                    onclick="completePersonalFlow('trails')">Map</button>
+                            </div>
+                            <div class="personal-match-result">
+                                <strong>Memory matching</strong>
+                                <span>42 related memories found</span>
+                                <span>Best match · 92%</span>
+                            </div>
+                            <div class="share-permission" id="personalPermissions">
+                                <strong>Share permission</strong>
+                                <button class="active" onclick="selectPermission(this)">Private archive</button><button
+                                    onclick="selectPermission(this)">Exchangeable</button><button
+                                    onclick="selectPermission(this)">Public</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="view" id="matched">
+                <div class="matched-memory-page">
+                    <article class="matched-memory-visual">
+                        <img id="matchedMemoryImage"
+                            src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=1200&auto=format&fit=crop"
+                            alt="Matched memory">
+                        <div><span id="matchedMemoryTag">Childhood · 1998</span><strong id="matchedMemoryName">Old
+                                shopfront sign</strong><small id="matchedMemoryPlace">Shenzhen · 92% match</small></div>
+                    </article>
+                    <section class="matched-memory-copy">
+                        <div class="kicker green">Matched memory unlocked</div>
+                        <h2>Choose how to explore this memory.</h2>
+                        <p>The same memory can be understood through time, place or the object that carries it.</p>
+                        <div class="mode-choice-grid">
+                            <button
+                                onclick="openMatchedMode('timeline')"><span>01</span><strong>Timeline</strong><small>Place
+                                    it within an evolving life chapter.</small></button>
+                            <button onclick="openMatchedMode('trails')"><span>02</span><strong>Map</strong><small>Reveal
+                                    its place, trail and AR layer.</small></button>
+                            <button
+                                onclick="openMatchedMode('objectspace')"><span>03</span><strong>Object</strong><small>Explore
+                                    the object and connected stories.</small></button>
+                        </div>
+                        <button class="btn btn-outline" onclick="showView('blindmatch')">Back to matching</button>
+                    </section>
+                </div>
+            </section>
+
+            <section class="view" id="rolehome">
+                <div class="match-home">
+                    <section class="match-secret-panel">
+                        <div class="match-panel-label">Secret match</div>
+                        <div class="match-secret-visual">
+                            <div class="sealed-memory">
+                                <span>Restricted archive</span>
+                                <strong id="secretCode">MEB–0719</strong>
+                                <small>One authorised memory is waiting.</small>
+                            </div>
+                        </div>
+                        <div class="match-secret-copy">
+                            <span class="match-index">01</span>
+                            <h2>A memory chosen by connection, not by search.</h2>
+                            <p id="secretMatchText">Open a private match shaped by shared place, era and emotion.</p>
+                            <button class="btn btn-accent" id="secretMatchButton" onclick="runSecretMatch()">Reveal
+                                secret match</button>
+                        </div>
+                    </section>
+
+                    <nav class="match-mode-spine" aria-label="Memory exploration modes">
+                        <div class="match-spine-line"></div>
+                        <button onclick="openRoleMode('timeline')" aria-label="Open Timeline mode">
+                            <span>01</span>
+                            <div class="match-mode-media timeline-media"><img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=500&auto=format&fit=crop" alt="Vintage camera"></div>
+                            <div class="match-mode-copy"><strong>Timeline</strong><small>Late 1990s</small><p>Captured between 1997 and 1999.</p></div>
+                        </button>
+                        <button onclick="openRoleMode('trails')" aria-label="Open Map mode">
+                            <span>02</span>
+                            <div class="match-mode-media map-media">
+                                <svg class="role-map-pin" viewBox="0 0 40 52" aria-hidden="true">
+                                    <path d="M20 1.75C10.05 1.75 2 9.8 2 19.75c0 13.5 18 30.5 18 30.5s18-17 18-30.5c0-9.95-8.05-18-18-18Z"/>
+                                    <circle cx="20" cy="19.5" r="7"/>
+                                </svg>
+                            </div>
+                            <div class="match-mode-copy"><strong>Map</strong><small>Shenzhen, China</small><p>Memories recorded around familiar neighbourhoods.</p></div>
+                        </button>
+                        <button onclick="openRoleMode('objectspace')" aria-label="Open Object mode">
+                            <span>03</span>
+                            <div class="match-mode-media object-media"><img src="./img/object-phone.png" alt="Old mobile phone"><img src="./img/object-tin.png" alt="Vintage tin"><img src="./img/object-clock.png" alt="Alarm clock"></div>
+                            <div class="match-mode-copy"><strong>Object</strong><small>Childhood items</small><p>Everyday things carrying shared stories.</p></div>
+                        </button>
+                    </nav>
+
+                    <section class="match-cover-panel">
+                        <div class="match-panel-label">Matched cover</div>
+                        <article class="memory-cover" id="roleMemoryCover">
+                            <img id="roleCoverImage"
+                                src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=1200&auto=format&fit=crop"
+                                alt="Matched memory cover">
+                            <div class="cover-wash"></div>
+                            <div class="cover-top"><span>Memory token</span><b id="roleCoverYear">1998</b></div>
+                            <div class="cover-copy">
+                                <span id="roleCoverTag">Childhood · Shenzhen</span>
+                                <h2 id="roleCoverTitle">The shop that disappeared</h2>
+                                <p id="roleCoverText">A neighbourhood storefront connecting twelve memories across two
+                                    generations.</p>
+                                <button onclick="openModal(5)">Explore matched memory</button>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            </section>
+
+            <section class="view" id="participant">
+                <div class="participant-discovery">
+                    <aside class="participant-intro">
+                        <div class="kicker green">Participant</div>
+                        <h2>Explore public memories and open matched blind boxes.</h2>
+                        <p>Participants browse authorized memories, follow live trails, collect public fragments and
+                            unlock co-creation through activity.</p>
+                        <div class="participant-menu">
+                            <button onclick="showView('market')"><span>▣</span>
+                                <div><strong>Memory market</strong><small>Browse and exchange memories</small></div>
+                                <b>→</b>
+                            </button>
+                            <button onclick="showView('blindmatch')"><span>⬡</span>
+                                <div><strong>Blind box matching</strong><small>Open matched blind boxes</small></div>
+                                <b>→</b>
+                            </button>
+                            <button onclick="showView('trails')"><span>⌖</span>
+                                <div><strong>Follow live trails</strong><small>Discover memories on the map</small>
+                                </div><b>→</b>
+                            </button>
+                            <button onclick="showView('activity')"><span>✧</span>
+                                <div><strong>Activity page</strong><small>Join activities and earn badges</small></div>
+                                <b>→</b>
+                            </button>
+                        </div>
+                    </aside>
+                    <article class="participant-live-card" onclick="showView('ar')">
+                        <img src="./img/big-ben-streetview.png" alt="Street trail">
+                        <div class="participant-live-top"><span><i></i> Live trail</span><button
+                                aria-label="Share trail">↗</button></div>
+                        <div class="participant-live-copy">
+                            <span>Trending trail</span>
+                            <h3>Street #719 public trail</h3>
+                            <p>Join an AR memory hunt, collect fragments and add your perspective.</p>
+                            <div><button>Explore Trail</button></div>
+                        </div>
+                    </article>
+                    <div class="participant-side">
+                        <article class="participant-action-card" onclick="showView('blindmatch')">
+                            <span>08-2</span>
+                            <img src="./img/archive-memory-box.svg" alt="">
+                            <h3>Blind box matching</h3>
+                            <p>Open a sealed memory through similarity and permission.</p>
+                            <button>Open Blind Box <b>→</b></button>
+                        </article>
+                        <article class="participant-action-card" onclick="showView('market')">
+                            <span>Exchange</span>
+                            <img src="./img/mode-object.svg" alt="">
+                            <h3>Authorized market</h3>
+                            <p>Browse public cards, trails and exchangeable memories.</p>
+                            <button>Browse Market <b>→</b></button>
+                        </article>
+                        <article class="participant-progress-card" onclick="showView('achievements')">
+                            <span>Progress</span>
+                            <div class="participant-progress-line"><i>★</i><i>●</i><i>♣</i><i>🔒</i></div>
+                            <h3>Participant achievements</h3>
+                            <p>Collect badges through visits, matches and co-creation.</p>
+                            <button>View Achievements <b>→</b></button>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="view" id="community">
+                <div class="community-hub">
+                    <aside class="role-flow-panel">
+                        <div class="kicker">Community User</div>
+                        <h2>Curate one shared memory from many voices.</h2>
+                        <p>Create and manage an activity, review contributions, let AI identify overlaps, then publish a shared
+                            Timeline, Map and Object archive.</p>
+                        <div class="community-flow-status" id="communityFlowStatus">Live activity · Big Ben Memory Walk · 12 contributors</div>
+                        <div class="flow-links">
+                            <button id="communityEventButton" onclick="openCommunityEventModal()">Create or edit activity</button>
+                            <button onclick="advanceCommunityFlow(2)">Review contributions</button>
+                            <button onclick="advanceCommunityFlow(3)">AI identify overlaps</button>
+                            <button onclick="advanceCommunityFlow(4)">Curate shared memory</button>
+                            <button onclick="advanceCommunityFlow(5)">Publish exploration modes</button>
+                        </div>
+                    </aside>
+                    <div class="community-grid">
+                        <article class="community-step active" data-community-step="1"
+                            onclick="openCommunityEventModal()"><span>01</span><strong id="communityEventCardTitle">Create event</strong>
+                            <p id="communityEventCardText">Define a place, theme, dates and contribution rules.</p>
+                            <div class="community-card-visual event-visual"><div class="event-calendar"><b></b><i></i></div></div>
+                        </article>
+                        <article class="community-step" data-community-step="2" onclick="advanceCommunityFlow(2)">
+                            <span>02</span><strong>Collect memories</strong>
+                            <p>Invite residents and gather photos, audio, objects and stories.</p>
+                            <div class="community-card-visual collection-visual"><div class="collection-box"></div><img src="./img/object-radio.png" alt="Radio contribution"><img src="./img/object-book.png" alt="Book contribution"><img src="./img/object-clock.png" alt="Clock contribution"></div>
+                        </article>
+                        <article class="community-step" data-community-step="3" onclick="advanceCommunityFlow(3)">
+                            <span>03</span><strong>AI merge</strong>
+                            <p>Find overlaps in time, place, object and emotion.</p>
+                            <div class="community-card-visual overlap-visual"><i></i><i></i><i></i><i></i><b>Time</b><b>Place</b><b>Object</b><b>Emotion</b></div>
+                        </article>
+                        <article class="community-step" data-community-step="4" onclick="advanceCommunityFlow(4)">
+                            <span>04</span><strong>Shared memory</strong>
+                            <p>Review the combined story and contributor permissions.</p>
+                            <div class="community-card-visual archive-visual"><i></i><i></i><i></i><div><b></b><b></b><span></span></div></div>
+                        </article>
+                        <article class="community-step" data-community-step="5" onclick="advanceCommunityFlow(5)">
+                            <span>05</span><strong>Explore modes</strong>
+                            <p>Publish Timeline, Map and Object experiences.</p>
+                            <div class="community-card-visual modes-visual">
+                                <button class="mode-preview mode-preview-timeline" aria-label="Open Timeline mode" title="Timeline" onclick="event.stopPropagation(); showView('timeline')">
+                                    <span class="preview-line"></span><i></i><i></i><i></i><i></i>
+                                </button>
+                                <button class="mode-preview mode-preview-map" aria-label="Open Map mode" title="Map" onclick="event.stopPropagation(); showView('trails')">
+                                    <span class="map-road road-one"></span><span class="map-road road-two"></span>
+                                    <svg class="map-pin-svg map-pin-main" viewBox="0 0 40 52" aria-hidden="true"><path d="M20 1.75C10.05 1.75 2 9.8 2 19.75c0 13.5 18 30.5 18 30.5s18-17 18-30.5c0-9.95-8.05-18-18-18Z"/><circle cx="20" cy="19.5" r="7"/></svg>
+                                    <svg class="map-pin-svg map-pin-small" viewBox="0 0 40 52" aria-hidden="true"><path d="M20 1.75C10.05 1.75 2 9.8 2 19.75c0 13.5 18 30.5 18 30.5s18-17 18-30.5c0-9.95-8.05-18-18-18Z"/><circle cx="20" cy="19.5" r="7"/></svg>
+                                </button>
+                                <button class="mode-preview mode-preview-object" aria-label="Open Object mode" title="Object" onclick="event.stopPropagation(); showView('objectspace')">
+                                    <span class="object-orbit"></span>
+                                    <svg class="object-cube-svg" viewBox="0 0 100 112" aria-hidden="true">
+                                        <path class="cube-top" d="M50 4 94 29 50 55 6 29Z"/>
+                                        <path class="cube-left" d="M6 29 50 55 50 107 6 81Z"/>
+                                        <path class="cube-right" d="M50 55 94 29 94 81 50 107Z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </article>
+                        <article onclick="showView('relations')"><span>Live</span><strong>12 contributors</strong>
+                            <p>Owners, residents, guides and archive curators.</p>
+                            <div class="community-card-visual contributor-visual"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=160&auto=format&fit=crop" alt=""><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=160&auto=format&fit=crop" alt=""><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=160&auto=format&fit=crop" alt=""><img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=160&auto=format&fit=crop" alt=""><b>+8</b></div>
+                        </article>
+                    </div>
+                </div>
+            </section>
+
+            <section class="view" id="memoryfusion">
+                <div class="fusion-workspace">
+                    <div class="fusion-collage">
+                        <div class="kicker">Memory Fusion</div>
+                        <h2>Layer objects, people and place into one shared archive.</h2>
+                        <div class="fusion-object-cloud fusion-photo-cloud" onclick="showView('objectspace')" role="button" tabindex="0" aria-label="Open shared objects" onkeydown="if(event.key === 'Enter' || event.key === ' ') showView('objectspace')">
+                            <img class="fusion-phone" src="./img/object-phone.png" alt="Late 1990s mobile phone">
+                            <img class="fusion-radio" src="./img/object-radio.png" alt="Family tabletop radio">
+                            <img class="fusion-tv" src="./img/object-tv.png" alt="Old CRT television">
+                            <img class="fusion-computer" src="./img/object-computer.png" alt="Early home computer">
+                            <img class="fusion-chair" src="./img/object-chair.png" alt="Worn wooden chair">
+                            <img class="fusion-book" src="./img/object-book.png" alt="Old family book">
+                            <img class="fusion-tin" src="./img/object-tin.png" alt="Vintage tea tin">
+                            <img class="fusion-clock" src="./img/object-clock.png" alt="Round alarm clock">
+                            <img class="fusion-lamp" src="./img/object-lamp.png" alt="Old table lamp">
+                            <img class="fusion-fan" src="./img/object-fan.png" alt="Vintage desk fan">
+                            <span class="fusion-object-link">Open shared object field</span>
+                        </div>
+                        <div class="fusion-mini-map">Map location</div>
+                    </div>
+                    <aside class="fusion-detail">
+                        <div class="kicker green">08-3 Memory Fusion</div>
+                        <h3>Street #719 combined trail</h3>
+                        <p>Photos, object scans, audio notes and family stories are merged into a route that
+                            participants can explore in AR.</p>
+                        <div class="fusion-stat"><span>Objects</span><strong>10</strong></div>
+                        <div class="fusion-stat"><span>Contributors</span><strong>8</strong></div>
+                        <div class="fusion-stat"><span>Public nodes</span><strong>4</strong></div>
+                        <button class="btn btn-accent" onclick="showView('connections')">Open co-create room</button>
+                    </aside>
+                </div>
+            </section>
+
+            <section class="view" id="tasks">
+                <div class="task-workspace">
+                    <section class="task-column">
+                        <div class="kicker green">09 Task Mode</div>
+                        <h2>Community tasks</h2>
+                        <article><span>Scan</span><strong>Verify Big Ben hotspot</strong><button>Assign</button>
+                        </article>
+                        <article><span>Upload</span><strong>Add family photo to trail</strong><button>Assign</button>
+                        </article>
+                        <article><span>Guide</span><strong>Host Sunday memory walk</strong><button>Assign</button>
+                        </article>
+                    </section>
+                    <section class="task-achievement-preview">
+                        <h3>Reward pool</h3>
+                        <div class="badge-grid">
+                            <span></span><span></span><span></span><span></span><span></span><span></span>
+                        </div>
+                        <button class="btn btn-outline" onclick="showView('achievements')">View achievements</button>
+                    </section>
+                </div>
+            </section>
+
+            <section class="view" id="relations">
+                <div class="relation-list">
+                    <div class="relation-head">
+                        <div class="relation-title-copy">
+                            <div class="kicker">09-1 Relation List</div>
+                            <h2>Contributor network</h2>
+                            <p>The people who help make our shared memories possible.<br>Connect, collaborate and keep the community growing.</p>
+                        </div>
+                        <div class="relation-network" aria-hidden="true">
+                            <span style="--x:15%;--y:62%;--s:34px"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt=""></span>
+                            <span style="--x:38%;--y:25%;--s:42px"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=100&auto=format&fit=crop" alt=""></span>
+                            <span style="--x:56%;--y:54%;--s:58px"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=100&auto=format&fit=crop" alt=""></span>
+                            <span style="--x:78%;--y:22%;--s:34px"><img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=100&auto=format&fit=crop" alt=""></span>
+                            <span style="--x:84%;--y:72%;--s:48px"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?q=80&w=100&auto=format&fit=crop" alt=""></span>
+                        </div>
+                        <button class="btn btn-accent relation-chat-button" onclick="showView('chatmode')">Open chat</button>
+                    </div>
+                    <div class="relation-grid">
+                        <article class="contributor-card"><div class="contributor-main"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=220&auto=format&fit=crop" alt="Jiachen"><div><strong>Jiachen</strong><span class="contributor-role">Memory contributor</span><p>Family photos and stories · Memory sharing</p></div><em>Active</em></div>
+                            <div class="contributor-stats"><div><b>128</b><small>Memories shared</small></div><div><b>342</b><small>Appreciations</small></div><div><b>8</b><small>Events joined</small></div></div>
+                            <div class="contributor-profile-extra"><p>Can contribute photographs, stories and object notes to public community archives.</p></div>
+                            <button class="contributor-profile-button" onclick="toggleContributorProfile(this)">View profile <b>›</b></button>
+                        </article>
+                        <article class="contributor-card"><div class="contributor-main"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=220&auto=format&fit=crop" alt="James"><div><strong>James</strong><span class="contributor-role owner-role">Street archive owner</span><p>Route access and street archive management</p></div><em>Owner</em></div>
+                            <div class="contributor-stats"><div><b>24</b><small>Routes managed</small></div><div><b>156</b><small>Access granted</small></div><div><b>12</b><small>Collaborators</small></div></div>
+                            <div class="contributor-profile-extra"><p>Owns the Street #719 archive and approves route, AR beacon and exchange permissions.</p></div>
+                            <button class="contributor-profile-button" onclick="toggleContributorProfile(this)">View profile <b>›</b></button>
+                        </article>
+                        <article class="contributor-card"><div class="contributor-main"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=220&auto=format&fit=crop" alt="Mei"><div><strong>Mei</strong><span class="contributor-role">Family album curator</span><p>Curates albums and reviews submissions</p></div><em>Curator</em></div>
+                            <div class="contributor-stats"><div><b>56</b><small>Albums curated</small></div><div><b>210</b><small>Reviews done</small></div><div><b>5</b><small>Pending review</small></div></div>
+                            <div class="contributor-profile-extra"><p>Reviews family archive submissions and connects missing names, dates and relationships.</p></div>
+                            <button class="contributor-profile-button" onclick="toggleContributorProfile(this)">View profile <b>›</b></button>
+                        </article>
+                        <article class="contributor-card"><div class="contributor-main"><img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=220&auto=format&fit=crop" alt="Owen"><div><strong>Owen</strong><span class="contributor-role guide-role">Event guide</span><p>Leads events and community activities</p></div><em>Guide</em></div>
+                            <div class="contributor-stats"><div><b>15</b><small>Events hosted</small></div><div><b>89</b><small>Participants</small></div><div><b>4.9</b><small>Rating</small></div></div>
+                            <div class="contributor-profile-extra"><p>Guides public memory walks and coordinates AR checkpoints, access and participant safety.</p></div>
+                            <button class="contributor-profile-button" onclick="toggleContributorProfile(this)">View profile <b>›</b></button>
+                        </article>
+                    </div>
+                    <div class="relation-thanks">Thank you to our contributors. You make the Memory Exchange Bazaar a better place.</div>
+                </div>
+            </section>
+
+            <section class="view" id="chatmode">
+                <div class="chat-workspace">
+                    <aside class="chat-thread-list">
+                        <div class="kicker">09-2 Chat Mode</div>
+                        <h2 id="chatRoleTitle">Co-creation chats</h2>
+                        <p class="chat-role-description" id="chatRoleDescription">Join conversations around shared memories.</p>
+                        <button class="chat-role-action" id="chatRoleAction" onclick="runChatRoleAction()">Join selected conversation</button>
+                        <div class="chat-thread-buttons" id="chatThreadList">
+                            <button class="active" data-chat-thread="street" onclick="switchChatThread('street', this)">Street #719 group</button>
+                            <button data-chat-thread="radio" onclick="switchChatThread('radio', this)">Family radio archive</button>
+                            <button data-chat-thread="trail" onclick="switchChatThread('trail', this)">Sunday trail guide</button>
+                        </div>
+                    </aside>
+                    <section class="chat-room">
+                        <div class="chat-messages" id="chatMessages"></div>
+                        <div class="chat-input"><input id="chatMessageInput" placeholder="Leave a co-creation note..."
+                                onkeydown="if(event.key === 'Enter') sendChatMessage()"><button
+                                class="btn btn-accent" onclick="sendChatMessage()">Send</button></div>
+                    </section>
+                </div>
+            </section>
+
+            <section class="view" id="activity">
+                <div class="activity-page">
+                    <div class="activity-feed-head">
+                        <div>
+                            <span class="activity-spark">✦</span>
+                            <h2>Activity</h2>
+                            <p>Discover what others are sharing and create together.</p>
+                        </div>
+                        <div class="activity-tools">
+                            <button class="activity-create" onclick="openActivityCreate()">+ Create</button>
+                        </div>
+                    </div>
+                    <div class="activity-track" id="activityTrack">
+                        <article>
+                            <div class="activity-card-menu">•••</div>
+                            <span class="activity-chip story">Story</span>
+                            <img src="https://images.unsplash.com/photo-1529655683826-aba9b3e77383?q=80&w=900&auto=format&fit=crop"
+                                alt="Street memory">
+                            <div class="activity-author"><img
+                                    src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=120&auto=format&fit=crop"
+                                    alt="">
+                                <div><strong>Lily Chen</strong>
+                                    <p>2 hours ago · public</p>
+                                </div>
+                            </div>
+                            <h3>Street #719</h3>
+                            <p>A layered memory has been discovered here. A 1953 photograph is attached to the
+                                present-day street, inviting others to recall their own stories.</p>
+                            <div class="activity-location">⌖ District VII, Budapest</div>
+                            <div class="activity-social"><span>👩🏻‍🦱👨🏻‍🦱👩🏻 +12</span><span>♡ 24</span><span>◯
+                                    8</span></div>
+                        </article>
+                        <article>
+                            <div class="activity-card-menu">•••</div>
+                            <span class="activity-chip memory">Memory</span>
+                            <img src="https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=900&auto=format&fit=crop"
+                                alt="Radio memory">
+                            <div class="activity-author"><img
+                                    src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=120&auto=format&fit=crop"
+                                    alt="">
+                                <div><strong>Alex Wong</strong>
+                                    <p>5 hours ago · public</p>
+                                </div>
+                            </div>
+                            <h3>Grandmother's radio</h3>
+                            <p>Every evening, the radio sat beside the window, turning weather reports and old songs
+                                into a domestic sound archive.</p>
+                            <div class="activity-location">⌖ Chengdu, China</div>
+                            <div class="activity-social"><span>👨🏻‍🦱👩🏻‍🦱👵🏻 +8</span><span class="liked">♥
+                                    32</span><span>◯ 6</span></div>
+                        </article>
+                        <article>
+                            <div class="activity-card-menu">•••</div>
+                            <span class="activity-chip album">Album</span>
+                            <img src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=900&auto=format&fit=crop"
+                                alt="Family album memory">
+                            <div class="activity-author"><img
+                                    src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=120&auto=format&fit=crop"
+                                    alt="">
+                                <div><strong>Sophie Martin</strong>
+                                    <p>1 day ago · public</p>
+                                </div>
+                            </div>
+                            <h3>A photo taken too late</h3>
+                            <p>This image is part of a memory fusion sequence, where different people add missing parts
+                                of a shared story.</p>
+                            <div class="activity-location">⌖ Beijing, China</div>
+                            <div class="activity-social"><span>👵🏻👩🏻‍🦱👨🏻 +15</span><span>♡ 41</span><span>◯
+                                    11</span></div>
+                        </article>
+                    </div>
+                    <div class="activity-filters">
+                        <div><button
+                                class="active">All</button><button>Stories</button><button>Objects</button><button>Places</button><button>Albums</button><button>Letters</button><button>Audio</button>
+                        </div>
+                        <div><button>Latest⌄</button><button>☷</button></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="view" id="achievements">
+                <div class="achievement-page">
+                    <div class="achievement-head">
+                        <span>✦</span>
+                        <h2>Achievements</h2>
+                        <p>Celebrate your journey and keep collecting memories.</p>
+                    </div>
+                    <div class="achievement-wall" id="achievementWall" onscroll="syncAchievementDots()">
+                        <div class="achievement-track">
+                            <div class="achievement-slide">
+                                <article>
+                                    <div>🎁</div><strong>First Box</strong>
+                                    <p>Open your first blind box</p><time>2024-05-12</time>
+                                </article>
+                                <article>
+                                    <div>🖼️</div><strong>Collector</strong>
+                                    <p>Collect 10 memories</p><time>2024-05-18</time>
+                                </article>
+                                <article>
+                                    <div>🛩️</div><strong>Sharer</strong>
+                                    <p>Share a memory with others</p><time>2024-05-21</time>
+                                </article>
+                                <article>
+                                    <div>💬</div><strong>Commenter</strong>
+                                    <p>Leave 5 comments</p><time>2024-05-24</time>
+                                </article>
+                                <article>
+                                    <div>🗺️</div><strong>Explorer</strong>
+                                    <p>Discover 10 map beacons</p><time>2024-06-01</time>
+                                </article>
+                                <article>
+                                    <div>👥</div><strong>Socializer</strong>
+                                    <p>Follow 5 other users</p><time>2024-06-05</time>
+                                </article>
+                            </div>
+                            <div class="achievement-slide">
+                                <article>
+                                    <div>📷</div><strong>Storyteller</strong>
+                                    <p>Create your first story</p><time>2024-06-10</time>
+                                </article>
+                                <article>
+                                    <div>✒️</div><strong>Archivist</strong>
+                                    <p>Upload 20 memories</p><time>2024-06-15</time>
+                                </article>
+                                <article>
+                                    <div>🧩</div><strong>Connector</strong>
+                                    <p>Complete a memory fusion</p><time>2024-06-18</time>
+                                </article>
+                                <article>
+                                    <div>📅</div><strong>Consistent</strong>
+                                    <p>Keep a 7-day streak</p><time>2024-06-20</time>
+                                </article>
+                                <article>
+                                    <div>⭐</div><strong>Contributor</strong>
+                                    <p>Receive 10 likes on your memories</p><time>2024-06-25</time>
+                                </article>
+                                <article class="locked">
+                                    <div>🔒</div><strong>Legend</strong>
+                                    <p>Unlock all achievements</p><time>0 / 15</time>
+                                </article>
+                            </div>
+                        </div>
+                        <div class="achievement-dots"><button class="active" onclick="goAchievementPage(0)"
+                                aria-label="Achievements page 1"></button><button onclick="goAchievementPage(1)"
+                                aria-label="Achievements page 2"></button></div>
+                    </div>
+                    <p class="achievement-note">✦ Every memory shared is a step forward.</p>
+                </div>
+            </section>
+
+            <section class="view" id="connections">
+                <div class="connections">
+                    <div class="people" id="peopleList">
+                        <div class="fusion-panel">
+                            <div class="kicker green">Memory fusion</div>
+                            <h2>Same object, different eras.</h2>
+                            <p>Invite family, close friends, teachers or community members to supplement missing
+                                chapters and build a parallel memory.</p>
+                            <div class="fusion-line"><span>1990</span><span>2006</span><span>2025</span></div>
+                        </div>
+                    </div>
+                    <div class="chat">
+                        <div class="message them">Hi Jiachen, do you remember the place we met?</div>
+                        <div class="message me">Check this — I found a memory node at Big Ben.</div>
+                        <div class="message them">Amazing. I’ll add my own photo to it.</div>
+                        <div class="chat-input"><input placeholder="Leave a message…"><button
+                                class="btn btn-accent">Send</button></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal" id="modal"><button class="close" onclick="closeModal()">Close</button>
+        <div class="modal-card"><img id="modalImg" src="" alt="memory">
+            <div class="modal-copy">
+                <div class="kicker" id="modalKicker">Memory Beacon</div>
+                <h2 id="modalTitle">Westminster Clock Chime</h2>
+                <p id="modalText"></p>
+                <div class="meta" id="modalMeta"></div><button class="btn btn-primary" id="modalExchangeButton"
+                    style="margin-top:24px" onclick="requestModalExchange(this)">Request Exchange</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="contributor-profile-modal" id="contributorProfileModal" onclick="if(event.target === this) closeContributorProfile()">
+        <article class="contributor-profile-dialog" role="dialog" aria-modal="true" aria-labelledby="contributorModalName">
+            <button class="contributor-profile-close" type="button" onclick="closeContributorProfile()" aria-label="Close profile">×</button>
+            <div class="contributor-profile-identity">
+                <img id="contributorModalImage" src="" alt="">
+                <div>
+                    <span id="contributorModalStatus">Contributor</span>
+                    <h2 id="contributorModalName">Contributor profile</h2>
+                    <strong id="contributorModalRole"></strong>
+                    <p id="contributorModalSummary"></p>
+                </div>
+            </div>
+            <div class="contributor-modal-stats" id="contributorModalStats"></div>
+            <div class="contributor-modal-about">
+                <span>About this contributor</span>
+                <p id="contributorModalAbout"></p>
+            </div>
+            <div class="contributor-modal-actions">
+                <button type="button" class="btn btn-outline" onclick="closeContributorProfile()">Back to network</button>
+                <button type="button" class="btn btn-accent" onclick="closeContributorProfile(); showView('chatmode')">Open conversation</button>
+            </div>
+        </article>
+    </div>
+
+    <div class="timeline-add-modal" id="timelineAddModal">
+        <form class="timeline-add-card" onsubmit="addTimelineMemory(event)">
+            <button type="button" class="timeline-add-close" onclick="closeTimelineMemoryForm()"
+                aria-label="Close">×</button>
+            <div>
+                <div class="kicker">Add Timeline Memory</div>
+                <h2>Create a new memory node.</h2>
+                <p>Upload one image, add the memory information, then place it directly into your timeline.</p>
+            </div>
+            <label class="timeline-upload-preview">
+                <input id="timelineMemoryImage" type="file" accept="image/*" onchange="previewTimelineMemory(event)">
+                <img id="timelineMemoryPreview" src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=700&auto=format&fit=crop" alt="Memory preview">
+                <span>Upload image</span>
+            </label>
+            <div class="timeline-form-grid">
+                <label>Title<input id="timelineMemoryTitle" required value="A new memory"></label>
+                <label>Year<input id="timelineMemoryYear" required type="number" min="1900" max="2099"
+                        value="2026"></label>
+                <label>Category<input id="timelineMemoryCategory" required value="Personal"></label>
+                <label>Place<input id="timelineMemoryPlace" required value="London"></label>
+            </div>
+            <textarea id="timelineMemoryText"
+                placeholder="Short memory note...">A personal fragment added to my timeline.</textarea>
+            <button class="btn btn-accent timeline-confirm" type="submit">Confirm and add to timeline</button>
+        </form>
+    </div>
+
+    <div class="timeline-add-modal" id="activityCreateModal">
+        <form class="timeline-add-card activity-create-card" onsubmit="addActivityPost(event)">
+            <button type="button" class="timeline-add-close" onclick="closeActivityCreate()"
+                aria-label="Close">×</button>
+            <div>
+                <div class="kicker">Create Activity</div>
+                <h2>Share a new memory post.</h2>
+                <p>Create a story, object, place or album update for the community activity feed.</p>
+            </div>
+            <label class="timeline-upload-preview">
+                <input id="activityPostImageInput" type="file" accept="image/*"
+                    onchange="previewActivityPostImage(event)">
+                <img id="activityPostPreview"
+                    src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=900&auto=format&fit=crop"
+                    alt="">
+                <span>Upload image</span>
+            </label>
+            <div class="timeline-form-grid">
+                <label>Type<select id="activityPostType">
+                        <option>Story</option>
+                        <option>Memory</option>
+                        <option>Album</option>
+                        <option>Object</option>
+                        <option>Place</option>
+                    </select></label>
+                <label>Location<input id="activityPostPlace" required value="London, UK"></label>
+                <label>Title<input id="activityPostTitle" required value="A new shared memory"></label>
+                <label>Author<input id="activityPostAuthor" required value="You"></label>
+            </div>
+            <textarea id="activityPostText"
+                placeholder="Write the memory post...">A newly shared memory is ready for others to collect, respond to and co-create.</textarea>
+            <button class="btn btn-accent timeline-confirm" type="submit">Publish activity</button>
+        </form>
+    </div>
+
+    <div class="timeline-add-modal" id="groupChatModal" onclick="if(event.target === this) closeGroupChatModal()">
+        <form class="timeline-add-card group-chat-card" onsubmit="createGroupChat(event)">
+            <button type="button" class="timeline-add-close" onclick="closeGroupChatModal()" aria-label="Close">×</button>
+            <header class="group-chat-heading">
+                <div class="kicker">New Community Group</div>
+                <h2>Create a discussion group.</h2>
+                <p>Name the group and select the contributors who should be invited.</p>
+            </header>
+            <label class="group-name-field">Group name
+                <input id="groupChatName" required maxlength="42" placeholder="e.g. Big Ben memory contributors">
+            </label>
+            <fieldset class="group-member-picker">
+                <legend>Select group members</legend>
+                <label><input type="checkbox" value="Jiachen"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=160&auto=format&fit=crop" alt=""><span><strong>Jiachen</strong><small>Family photo contributor</small></span></label>
+                <label><input type="checkbox" value="James"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=160&auto=format&fit=crop" alt=""><span><strong>James</strong><small>Street archive owner</small></span></label>
+                <label><input type="checkbox" value="Mei"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=160&auto=format&fit=crop" alt=""><span><strong>Mei</strong><small>Family album curator</small></span></label>
+                <label><input type="checkbox" value="Owen"><img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?q=80&w=160&auto=format&fit=crop" alt=""><span><strong>Owen</strong><small>Community event guide</small></span></label>
+            </fieldset>
+            <p class="group-form-error" id="groupChatError" role="alert"></p>
+            <button class="btn btn-accent timeline-confirm" type="submit">Create group chat</button>
+        </form>
+    </div>
+
+    <div class="timeline-add-modal" id="communityEventModal" onclick="if(event.target === this) closeCommunityEventModal()">
+        <form class="timeline-add-card community-event-card" onsubmit="saveCommunityEvent(event)">
+            <button type="button" class="timeline-add-close" onclick="closeCommunityEventModal()" aria-label="Close">×</button>
+            <header class="community-event-heading">
+                <div class="kicker">Community Activity</div>
+                <h2>Create a place-based memory activity.</h2>
+                <p>Set the event details and contribution rules before inviting participants.</p>
+            </header>
+            <div class="timeline-form-grid community-event-fields">
+                <label>Activity name<input id="communityEventName" required value="Big Ben Memory Walk"></label>
+                <label>Place<input id="communityEventPlace" required value="Westminster, London"></label>
+                <label>Theme<input id="communityEventTheme" required value="Clock memories across generations"></label>
+                <label>Date<input id="communityEventDate" required type="date" value="2026-08-16"></label>
+                <label>Contribution access<select id="communityEventAccess"><option>Public contributions</option><option>Invitation only</option><option>Review before publishing</option></select></label>
+                <label>Activity status<select id="communityEventStatus"><option>Draft</option><option>Open for contributions</option><option>Live</option></select></label>
+            </div>
+            <label class="community-event-rules">Contribution rules
+                <textarea id="communityEventRules" required>Participants may add photographs, audio notes and object stories connected to the route. All contributions are reviewed before publication.</textarea>
+            </label>
+            <button class="btn btn-accent timeline-confirm" type="submit">Save community activity</button>
+        </form>
+    </div>
+
+    <script>
+        const memories = [
+            { title: 'Westminster Clock Chime', year: '1953', place: 'Big Ben, London', tag: 'AR Beacon', img: 'https://images.unsplash.com/photo-1529655683826-aba9b3e77383?q=80&w=900&auto=format&fit=crop', text: 'A layered memory has been discovered near Elizabeth Tower. A clock chime and street photograph are attached to the present-day Big Ben view, inviting others to add their own story.' },
+            { title: 'The first train ticket', year: '2006', place: 'Guangzhou', tag: 'Travel', img: 'https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=900&auto=format&fit=crop', text: 'A faded ticket from a first journey alone. It carries the feeling of leaving, arriving and becoming independent.' },
+            { title: 'Grandmother’s radio', year: '1985', place: 'Chengdu', tag: 'Family', img: 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=900&auto=format&fit=crop', text: 'The radio sat beside the window every evening, turning weather reports and old songs into a domestic sound archive.' },
+            { title: 'A photo taken too late', year: '2010', place: 'Beijing', tag: 'Family Album', img: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=900&auto=format&fit=crop', text: 'This image is part of a memory fusion sequence, where different people add missing parts of a shared story.' },
+            { title: 'The letter never sent', year: '1993', place: 'Nanjing', tag: 'Letter', img: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=900&auto=format&fit=crop', text: 'The handwriting has faded, but the hesitation remains visible. Some memories were never sent, only preserved.' },
+            { title: 'Old shopfront sign', year: '1998', place: 'Shenzhen', tag: 'Childhood', img: 'https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=900&auto=format&fit=crop', text: 'A small neighbourhood shop becomes an anchor for childhood memories, snacks, stickers and after-school conversations.' }
+        ];
+        const memoryIcons = ['memory-pin.svg', 'memory-train.svg', 'memory-radio.svg', 'memory-photo.svg', 'memory-letter.svg', 'memory-shop.svg'];
+        const people = [
+            { name: 'Jiachen', role: 'Memory contributor', img: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=200&auto=format&fit=crop' },
+            { name: 'James', role: 'Street archive owner', img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop' },
+            { name: 'Mei', role: 'Family photo curator', img: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop' }
+        ];
+        const arMemories = [
+            { kicker: 'Big Ben · 1953', title: 'Westminster Clock Chime', meta: 'Audio note recorded near Elizabeth Tower.', text: 'A layered memory is attached to the present-day street view. Listen to the clock chime, collect the fragment, or invite another user to add their view.', status: 'Big Ben AR · Clock memory locked' },
+            { kicker: 'Westminster Bridge · 1977', title: 'A postcard from the bridge', meta: 'Photo fragment facing Parliament Square.', text: 'A tourist postcard overlaps the current bridge view. The uploader marked the exact railing where the image was taken.', status: 'Big Ben AR · Bridge photo found' },
+            { kicker: 'River Thames · 2000', title: 'Millennium night crowd', meta: 'Video memory uploaded by a community user.', text: 'A short crowd video appears along the river edge. The trail asks visitors to add their own New Year memory from London.', status: 'Big Ben AR · Video fragment found' },
+            { kicker: 'Co-creation · Live', title: 'Build the Westminster trail', meta: 'Invite contributors nearby.', text: 'Connect public photos, bell recordings and family stories into one shared Big Ben memory route.', status: 'Big Ben AR · Co-creation ready' }
+        ];
+        const blindBoxes = [
+            { score: '92%', object: 'shopfront', era: '1990s', emotion: 'nostalgia', permission: 'Authorized exchange', rule: 'Can be opened after one contribution or public trail check-in.', contributors: '3 possible contributors', invite: 'Invite owner, local participant or family archive curator.', memoryIndex: 5 },
+            { score: '87%', object: 'radio', era: '1980s', emotion: 'comfort', permission: 'Family archive preview', rule: 'Can be opened after requesting owner permission.', contributors: '2 possible contributors', invite: 'Invite family album curator and audio owner.', memoryIndex: 2 },
+            { score: '81%', object: 'letter', era: '1990s', emotion: 'regret', permission: 'Private archive request', rule: 'Can be opened after a message is accepted.', contributors: '1 possible contributor', invite: 'Invite the letter owner to co-create context.', memoryIndex: 4 },
+            { score: '76%', object: 'train ticket', era: '2000s', emotion: 'leaving', permission: 'Public travel trail', rule: 'Can be opened after joining the station route.', contributors: '4 possible contributors', invite: 'Invite travellers with overlapping routes.', memoryIndex: 1 }
+        ];
+        const chatThreads = {
+            street: [
+                { side: 'them', text: 'Can we connect the 1953 photo with the present-day Big Ben scan?' },
+                { side: 'me', text: 'Yes, I found a matching node. I’ll add it to the trail.' },
+                { side: 'them', text: 'I can upload my family story tonight.' }
+            ],
+            radio: [
+                { side: 'them', text: 'I found another recording made on the same model of radio.' },
+                { side: 'me', text: 'Please add it to the family archive. We can compare the voices and dates.' },
+                { side: 'them', text: 'I will ask the owner for exchange permission.' }
+            ],
+            trail: [
+                { side: 'them', text: 'The Sunday memory walk starts at Westminster Bridge at 10:30.' },
+                { side: 'me', text: 'I can guide the Big Ben AR checkpoint.' },
+                { side: 'them', text: 'Great. I have added you to the public trail team.' }
+            ]
+        };
+        const objectMemories = [
+            { kicker: 'Communication · 1999', title: 'The first family mobile', text: 'Four contributors remember shared calls, saved numbers and the first messages sent from this phone.', people: '4 contributors' },
+            { kicker: 'Family · 1985', title: 'Grandmother’s radio', text: 'Three contributors connect evening songs, weather reports and family dinners through the same radio.', people: '3 contributors' },
+            { kicker: 'Home · 1978', title: 'The television in the front room', text: 'Seven neighbours remember gathering around the same programmes, news reports and weekend films.', people: '7 contributors' },
+            { kicker: 'Technology · 1987', title: 'Our first home computer', text: 'Five contributors connect school projects, early games and the sound of a computer starting up.', people: '5 contributors' },
+            { kicker: 'Home · 1962', title: 'Grandfather’s wooden chair', text: 'Three generations attach meals, repairs and quiet afternoon conversations to this worn chair.', people: '6 contributors' },
+            { kicker: 'Archive · 1954', title: 'The book passed between us', text: 'Notes in the margins reveal how one book travelled through several hands and homes.', people: '4 contributors' },
+            { kicker: 'Kitchen · 1971', title: 'The tea tin on the shelf', text: 'Five family stories share the same familiar tin, reused for tea, buttons and small keepsakes.', people: '5 contributors' },
+            { kicker: 'Morning · 1968', title: 'The clock that woke the house', text: 'Different family members recall school mornings and work shifts measured by this alarm clock.', people: '4 contributors' },
+            { kicker: 'Evening · 1959', title: 'Light beside the window', text: 'Three memories connect reading, sewing and late-night conversations beneath this small lamp.', people: '3 contributors' },
+            { kicker: 'Summer · 1975', title: 'The fan in the old shop', text: 'Six contributors remember summer heat, street sounds and slow afternoons around this desk fan.', people: '6 contributors' }
+        ];
+        let activeChatThread = 'street';
+        let selectedChatThread = 'street';
+        const joinedChatThreads = new Set();
+        let nextGroupChatId = 1;
+        let selectedRole = 'Personal User';
+        let currentArMemory = 0;
+        let currentBlindBox = -1;
+        let timelineMemoryImageSrc = 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=700&auto=format&fit=crop';
+        let activityPostImageSrc = 'https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=900&auto=format&fit=crop';
+        let nextTimelineMemoryId = 7;
+        const timelineMemories = [
+            { id: 1, year: 1953, category: 'AR Beacon', title: 'Street #719', place: 'District VII, Budapest', img: 'https://images.unsplash.com/photo-1529655683826-aba9b3e77383?q=80&w=900&auto=format&fit=crop', text: 'A layered street memory attached to a public place.' },
+            { id: 2, year: 1985, category: 'Family', title: "Grandmother's radio", place: 'Chengdu', img: 'https://images.unsplash.com/photo-1519682337058-a94d519337bc?q=80&w=900&auto=format&fit=crop', text: 'Old songs and weather reports became a domestic sound archive.' },
+            { id: 3, year: 1993, category: 'Letter', title: 'The letter never sent', place: 'Nanjing', img: 'https://images.unsplash.com/photo-1516387938699-a93567ec168e?q=80&w=900&auto=format&fit=crop', text: 'A private letter preserved as an emotional fragment.' },
+            { id: 4, year: 1998, category: 'Childhood', title: 'Old shopfront sign', place: 'Shenzhen', img: 'https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=900&auto=format&fit=crop', text: 'A small neighbourhood shop anchors childhood memories.' },
+            { id: 5, year: 2006, category: 'Travel', title: 'The first train ticket', place: 'Guangzhou', img: 'https://images.unsplash.com/photo-1527838832700-5059252407fa?q=80&w=900&auto=format&fit=crop', text: 'A faded ticket from a first journey alone.' },
+            { id: 6, year: 2010, category: 'Family Album', title: 'A photo taken too late', place: 'Beijing', img: 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=900&auto=format&fit=crop', text: 'A photo that became part of a memory fusion sequence.' }
+        ];
+        const roleNavigation = {
+            'Personal User': ['plaza', 'archive', 'market', 'trails', 'ar', 'upload', 'connections'],
+            'Participant': ['rolehome', 'timeline', 'trails', 'objectspace', 'chatmode'],
+            'Community User': ['community', 'timeline', 'trails', 'objectspace', 'chatmode']
+        };
+        const roleAccess = {
+            'Personal User': new Set([...roleNavigation['Personal User'], 'shelf', 'timeline', 'objectspace', 'memoryfusion']),
+            'Participant': new Set([...roleNavigation['Participant'], 'participant', 'market', 'blindmatch', 'matched', 'activity', 'achievements', 'ar']),
+            'Community User': new Set([...roleNavigation['Community User'], 'relations', 'memoryfusion', 'activity', 'tasks', 'connections', 'ar'])
+        };
+        let communityFlowStep = 1;
+        const defaultUploadSrc = 'https://images.unsplash.com/photo-1517420879524-86d64ac2f339?q=80&w=700&auto=format&fit=crop';
+        function setExchangeState(state, message) {
+            const panel = document.getElementById('exchangePanel');
+            const status = document.getElementById('exchangeStatus');
+            const arrows = document.getElementById('exchangeArrows');
+            if (!panel || !status || !arrows) return;
+            panel.dataset.state = state;
+            status.textContent = message;
+            arrows.textContent = state === 'complete' ? '✓' : state === 'accepted' ? '↔' : '⇄';
+        }
+        function switchBlindBoxTab(tab) {
+            document.querySelectorAll('[data-blind-tab]').forEach(btn => btn.classList.toggle('active', btn.dataset.blindTab === tab));
+            const stage = document.querySelector('#blindmatch .blindbox-stage');
+            const exchange = document.getElementById('exchangePanel');
+            const myBox = document.getElementById('myBoxPanel');
+            const history = document.getElementById('historyPanel');
+            if (stage) stage.classList.toggle('hidden', tab !== 'match');
+            if (exchange) exchange.classList.toggle('hidden', tab !== 'match');
+            if (myBox) myBox.classList.toggle('hidden', tab !== 'mybox');
+            if (history) history.classList.toggle('hidden', tab !== 'history');
+        }
+        function goEntry(id) { document.querySelectorAll('.entry').forEach(e => e.classList.remove('active')); document.getElementById('app').classList.remove('active'); document.getElementById(id).classList.add('active') }
+        function enterApp(role) {
+            selectedRole = role;
+            document.getElementById('loginRole').textContent = role;
+            showLoginNotice('');
+            goEntry('entry-login');
+        }
+        function startViewForRole(role) {
+            if (role === 'Participant') return 'rolehome';
+            if (role === 'Community User') return 'community';
+            return 'plaza';
+        }
+        function configureRoleNavigation(role) {
+            const orderedTabs = roleNavigation[role] || roleNavigation['Personal User'];
+            const allowedTabs = new Set(orderedTabs);
+            const rail = document.querySelector('.rail');
+            const spacer = rail ? rail.querySelector('.rail-spacer') : null;
+            document.querySelectorAll('.nav[data-view]').forEach(nav => {
+                nav.classList.toggle('role-hidden', !allowedTabs.has(nav.dataset.view));
+            });
+            if (rail && spacer) {
+                orderedTabs.forEach(id => {
+                    const nav = rail.querySelector(`.nav[data-view="${id}"]`);
+                    if (nav) rail.insertBefore(nav, spacer);
+                });
+            }
+        }
+        function finishLogin() { document.querySelectorAll('.entry').forEach(e => e.classList.remove('active')); document.getElementById('app').classList.add('active'); document.getElementById('roleName').textContent = selectedRole; configureRoleNavigation(selectedRole); showView(startViewForRole(selectedRole)) }
+        function showLoginNotice(message) {
+            const notice = document.getElementById('loginNotice');
+            if (notice) notice.textContent = message;
+        }
+        function submitLogin(event) {
+            event.preventDefault();
+            showLoginNotice('Login successful. Opening your memory space…');
+            window.setTimeout(finishLogin, 350);
+        }
+        function logout() { document.getElementById('app').classList.remove('active'); goEntry('entry-home') }
+        function showView(id) {
+            const allowedViews = roleAccess[selectedRole] || roleAccess['Personal User'];
+            if (!allowedViews.has(id)) id = startViewForRole(selectedRole);
+            if (id === 'upload') resetUpload();
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.getElementById(id).classList.add('active');
+            document.querySelectorAll('.nav').forEach(n => n.classList.toggle('active', n.dataset.view === id));
+            const names = { plaza: 'Personal flow · Create a memory', rolehome: 'Secret match · Timeline · Map · Object', archive: 'Generated memory modes', timeline: 'Timeline exploration', objectspace: 'Object exploration', participant: 'Discover public memories', market: 'Memory market', blindmatch: 'Blind box matching', matched: 'Matched memory · Choose a mode', community: 'Community event flow', memoryfusion: 'AI merged shared memory', relations: 'Community contributors', chatmode: 'Community co-creation', activity: 'Live memory activities', achievements: 'Participant progress', trails: 'Map exploration · Live trails', ar: 'AR memory scene · Big Ben', upload: 'Upload a memory', shelf: 'AI identify · Match · Permission', connections: 'Co-creation room' };
+            const roleHomeHint = selectedRole === 'Community User' ? 'Activity · Contributions · Curation · Publish' : 'Secret match · Timeline · Map · Object';
+            document.getElementById('topHint').textContent = id === startViewForRole(selectedRole) ? roleHomeHint : (names[id] || 'Memory Exchange Bazaar');
+            updateRoleInterface();
+        }
+        document.querySelectorAll('.nav[data-view]').forEach(n => n.addEventListener('click', () => { if (!n.classList.contains('role-hidden')) showView(n.dataset.view) }));
+        function updateRoleInterface() {
+            const isParticipant = selectedRole === 'Participant';
+            const isCommunity = selectedRole === 'Community User';
+            const timelineTitle = document.getElementById('timelineRoleTitle');
+            const timelineDescription = document.getElementById('timelineRoleDescription');
+            const timelineAction = document.getElementById('timelineRoleAction');
+            const objectAction = document.getElementById('objectRoleAction');
+            const trailKicker = document.getElementById('trailRoleKicker');
+            const trailTitle = document.getElementById('trailRoleTitle');
+            const trailDescription = document.getElementById('trailRoleDescription');
+            const trailButton = document.getElementById('trailPrimaryButton');
+            const chatTitle = document.getElementById('chatRoleTitle');
+            const chatDescription = document.getElementById('chatRoleDescription');
+            const chatAction = document.getElementById('chatRoleAction');
+
+            if (trailButton && trailButton.dataset.role !== selectedRole) {
+                trailButton.dataset.role = selectedRole;
+                delete trailButton.dataset.joined;
+                delete trailButton.dataset.checkpoint;
+                trailButton.classList.remove('activity-ready');
+            }
+            if (chatAction && chatAction.dataset.role !== selectedRole) {
+                chatAction.dataset.role = selectedRole;
+                chatAction.classList.remove('complete');
+            }
+
+            if (timelineTitle) timelineTitle.textContent = isCommunity ? 'Community Timeline' : isParticipant ? 'Shared Timeline' : 'My Timeline';
+            if (timelineDescription) timelineDescription.textContent = isCommunity
+                ? 'Review contributions and curate the chronology before publishing.'
+                : isParticipant ? 'Explore collected memories and contribute another perspective.' : 'A journey through my collected memories.';
+            if (timelineAction) timelineAction.textContent = isCommunity ? 'Curate Timeline' : isParticipant ? '+ Contribute Memory' : '+ Add Memory';
+            if (objectAction) objectAction.textContent = isCommunity ? 'Curate this object' : isParticipant ? 'Leave a memory' : 'Open memory';
+            if (trailKicker) trailKicker.textContent = isCommunity ? 'Community management' : isParticipant ? 'Live memory trail' : 'Community mode';
+            if (trailTitle) trailTitle.textContent = isCommunity ? 'Build and publish place-based activities.' : isParticipant ? 'Discover memories through place-based activities.' : 'Revive memories through place-based activities.';
+            if (trailDescription) trailDescription.textContent = isCommunity
+                ? 'Create memory beacons, plan AR checkpoints, manage event guides and review location contributions.'
+                : isParticipant ? 'Join an existing trail, collect public fragments and leave your perspective at a memory beacon.' : 'Explore map modes, temporal overlaps and memory trails.';
+            if (trailButton && !trailButton.dataset.joined && !trailButton.dataset.checkpoint) trailButton.textContent = isCommunity ? 'Create AR checkpoint' : isParticipant ? 'Join community activity' : 'Open community activity';
+            if (chatTitle) chatTitle.textContent = isCommunity ? 'Community group management' : 'Co-creation chats';
+            if (chatDescription) chatDescription.textContent = isCommunity ? 'Create groups, invite contributors and turn discussion into shared memory.' : 'Join existing conversations and add your memory fragment.';
+            if (chatAction) chatAction.textContent = isCommunity
+                ? (chatAction.classList.contains('complete') ? '+ Create another group' : '+ Create discussion group')
+                : 'Join selected conversation';
+            if (isParticipant && document.getElementById('chatmode')?.classList.contains('active')) {
+                const selectedThreadButton = document.querySelector(`[data-chat-thread="${selectedChatThread}"]`);
+                if (selectedThreadButton) switchChatThread(selectedChatThread, selectedThreadButton);
+            }
+        }
+        function returnFromSharedMode() {
+            showView(selectedRole === 'Personal User' ? 'archive' : startViewForRole(selectedRole));
+        }
+        function runTimelineRoleAction() {
+            if (selectedRole === 'Personal User') return openTimelineMemoryForm();
+            if (selectedRole === 'Community User') return showView('community');
+            showView('chatmode');
+        }
+        function runObjectRoleAction() {
+            if (selectedRole === 'Community User') return showView('community');
+            if (selectedRole === 'Participant') return showView('chatmode');
+            openModal(1);
+        }
+        function toggleContributorProfile(button) {
+            const card = button.closest('.contributor-card');
+            if (!card) return;
+            const modal = document.getElementById('contributorProfileModal');
+            if (!modal) return;
+            const image = card.querySelector('.contributor-main img');
+            const name = card.querySelector('.contributor-main strong');
+            const role = card.querySelector('.contributor-role');
+            const summary = card.querySelector('.contributor-main p');
+            const status = card.querySelector('.contributor-main em');
+            const about = card.querySelector('.contributor-profile-extra p');
+            const stats = card.querySelector('.contributor-stats');
+            const modalImage = document.getElementById('contributorModalImage');
+            modalImage.src = image?.src || '';
+            modalImage.alt = name?.textContent || 'Contributor';
+            document.getElementById('contributorModalName').textContent = name?.textContent || 'Contributor profile';
+            document.getElementById('contributorModalRole').textContent = role?.textContent || 'Community contributor';
+            document.getElementById('contributorModalSummary').textContent = summary?.textContent || '';
+            document.getElementById('contributorModalStatus').textContent = status?.textContent || 'Contributor';
+            document.getElementById('contributorModalAbout').textContent = about?.textContent || '';
+            document.getElementById('contributorModalStats').innerHTML = stats?.innerHTML || '';
+            modal.classList.add('active');
+            document.body.classList.add('profile-modal-open');
+            modal.querySelector('.contributor-profile-close')?.focus();
+        }
+        function closeContributorProfile() {
+            document.getElementById('contributorProfileModal')?.classList.remove('active');
+            document.body.classList.remove('profile-modal-open');
+        }
+        function runChatRoleAction() {
+            const button = document.getElementById('chatRoleAction');
+            if (!button) return;
+            if (selectedRole === 'Community User') {
+                return openGroupChatModal();
+            }
+            const selectedButton = document.querySelector(`[data-chat-thread="${selectedChatThread}"]`);
+            const threadName = selectedButton ? selectedButton.textContent.trim() : '';
+            if (!selectedChatThread || !threadName) {
+                button.textContent = 'Select a conversation below';
+                button.classList.add('needs-selection');
+                return;
+            }
+            activeChatThread = selectedChatThread;
+            joinedChatThreads.add(activeChatThread);
+            button.textContent = `Joined · ${threadName}`;
+            button.classList.add('complete');
+            button.classList.remove('needs-selection');
+            if (!chatThreads[activeChatThread].some(message => message.joinNotice)) {
+                chatThreads[activeChatThread].push({ side: 'system', text: `You joined ${threadName}. You can now add a memory fragment.`, joinNotice: true });
+            }
+            renderChatThread();
+            const input = document.getElementById('chatMessageInput');
+            if (input) {
+                input.disabled = false;
+                input.placeholder = 'Leave a co-creation note...';
+                input.focus();
+            }
+        }
+        function openGroupChatModal() {
+            const modal = document.getElementById('groupChatModal');
+            const name = document.getElementById('groupChatName');
+            const error = document.getElementById('groupChatError');
+            if (!modal) return;
+            if (error) error.textContent = '';
+            modal.querySelectorAll('input[type="checkbox"]').forEach(input => input.checked = false);
+            if (name) name.value = '';
+            modal.classList.add('active');
+            window.setTimeout(() => name && name.focus(), 80);
+        }
+        function closeGroupChatModal() {
+            document.getElementById('groupChatModal')?.classList.remove('active');
+        }
+        function createGroupChat(event) {
+            event.preventDefault();
+            const nameInput = document.getElementById('groupChatName');
+            const error = document.getElementById('groupChatError');
+            const members = Array.from(document.querySelectorAll('#groupChatModal input[type="checkbox"]:checked')).map(input => input.value);
+            const groupName = nameInput ? nameInput.value.trim() : '';
+            if (!groupName) {
+                if (error) error.textContent = 'Please enter a group name.';
+                return;
+            }
+            if (!members.length) {
+                if (error) error.textContent = 'Select at least one contributor.';
+                return;
+            }
+            const threadId = `community-${nextGroupChatId++}`;
+            chatThreads[threadId] = [
+                { side: 'system', text: `${groupName} was created with ${members.join(', ')}.` },
+                { side: 'them', text: 'This group is ready for memory contributions and community curation.' }
+            ];
+            const list = document.getElementById('chatThreadList');
+            const threadButton = document.createElement('button');
+            threadButton.type = 'button';
+            threadButton.dataset.chatThread = threadId;
+            threadButton.textContent = groupName;
+            threadButton.addEventListener('click', () => switchChatThread(threadId, threadButton));
+            list.prepend(threadButton);
+            closeGroupChatModal();
+            switchChatThread(threadId, threadButton);
+            const action = document.getElementById('chatRoleAction');
+            if (action) {
+                action.textContent = '+ Create another group';
+                action.classList.add('complete');
+            }
+        }
+        function openCommunityEventModal() {
+            document.getElementById('communityEventModal')?.classList.add('active');
+            window.setTimeout(() => document.getElementById('communityEventName')?.focus(), 80);
+        }
+        function closeCommunityEventModal() {
+            document.getElementById('communityEventModal')?.classList.remove('active');
+        }
+        function saveCommunityEvent(event) {
+            event.preventDefault();
+            const name = document.getElementById('communityEventName').value.trim();
+            const place = document.getElementById('communityEventPlace').value.trim();
+            const theme = document.getElementById('communityEventTheme').value.trim();
+            const date = document.getElementById('communityEventDate').value;
+            const access = document.getElementById('communityEventAccess').value;
+            const status = document.getElementById('communityEventStatus').value;
+            const rules = document.getElementById('communityEventRules').value.trim();
+            const formattedDate = date ? new Date(`${date}T12:00:00`).toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' }) : 'Date pending';
+            document.getElementById('communityFlowStatus').textContent = `${status} · ${name} · ${formattedDate}`;
+            document.getElementById('communityEventCardTitle').textContent = name;
+            const eventCardText = document.getElementById('communityEventCardText');
+            eventCardText.textContent = `${place} · ${theme} · ${access}`;
+            eventCardText.title = rules;
+            const button = document.getElementById('communityEventButton');
+            if (button) {
+                button.textContent = 'Edit activity';
+                button.classList.add('flow-complete');
+            }
+            closeCommunityEventModal();
+        }
+        function render() {
+            objectList.innerHTML = memories.slice(0, 5).map((m, i) => `<article class="object-item" onclick="openModal(${i})"><img src="./img/${memoryIcons[i]}" alt=""><div><div class="kicker">${m.tag}</div><h3>${m.title}</h3><p>${m.place} · ${m.text.slice(0, 82)}...</p></div><div class="year">${m.year}</div></article>`).join('');
+            marketGrid.innerHTML = memories.map((m, i) => `<article class="memory-card" onclick="openModal(${i})"><img src="${m.img}"><div class="memory-body"><div class="kicker">${m.tag} · ${m.year}</div><h3>${m.title}</h3><p>${m.text.slice(0, 112)}...</p><div class="meta"><span class="pill">${m.place}</span><span class="pill">Exchangeable</span></div></div></article>`).join('');
+            peopleList.innerHTML = `<div class="fusion-panel"><div class="kicker green">Memory fusion</div><h2>Same object, different eras.</h2><p>Invite family, close friends, teachers or community members to supplement missing chapters and build a parallel memory.</p><div class="fusion-line"><span>1990</span><span>2006</span><span>2025</span></div></div><div class="kicker">Nearby Contributors</div>` + people.map(p => `<div class="person"><img src="${p.img}"><div><h4>${p.name}</h4><p>${p.role}</p></div></div>`).join('');
+            renderTimeline();
+        }
+        render();
+        renderChatThread();
+        function openModal(i) { const m = memories[i]; modalImg.src = m.img; modalKicker.textContent = m.tag + ' · ' + m.year; modalTitle.textContent = m.title; modalText.textContent = m.text; modalMeta.innerHTML = `<span class="pill">${m.place}</span><span class="pill">Memory Token</span><span class="pill">Co-creation enabled</span>`; const requestButton = document.getElementById('modalExchangeButton'); if (requestButton) { requestButton.textContent = 'Request Exchange'; requestButton.disabled = false; requestButton.classList.remove('request-success'); } modal.classList.add('active') }
+        function requestModalExchange(button) {
+            button.textContent = 'Request successful';
+            button.disabled = true;
+            button.classList.add('request-success');
+        }
+        function openTimelineModal(id) {
+            const m = timelineMemories.find(item => item.id === id);
+            if (!m) return;
+            modalImg.src = m.img;
+            modalKicker.textContent = `${m.category} · ${m.year}`;
+            modalTitle.textContent = m.title;
+            modalText.textContent = m.text;
+            modalMeta.innerHTML = `<span class="pill">${m.place}</span><span class="pill">Timeline Memory</span><span class="pill">Manual entry</span>`;
+            modal.classList.add('active');
+        }
+        function timelineColorClass(index) {
+            return ['blue', 'orange', 'purple', 'green-text', 'purple', 'pink'][index % 6];
+        }
+        function renderTimeline() {
+            const stage = document.getElementById('timelineStage');
+            if (!stage) return;
+            const sorted = [...timelineMemories].sort((a, b) => a.year - b.year || a.id - b.id);
+            const gap = 230;
+            const start = 120;
+            const endPad = 190;
+            stage.style.width = `${Math.max(1080, start + (sorted.length - 1) * gap + endPad)}px`;
+            stage.innerHTML = '<div class="timeline-line"></div>';
+            sorted.forEach((m, index) => {
+                const dotLeft = start + index * gap;
+                const isTop = index % 2 === 0;
+                const color = timelineColorClass(index);
+                const card = document.createElement('article');
+                card.className = `timeline-card ${isTop ? 'timeline-card-top' : 'timeline-card-bottom'}${m.added ? ' timeline-card-added' : ''}`;
+                card.style.left = `${Math.max(0, dotLeft - 118)}px`;
+                card.innerHTML = `<img src="${m.img}" alt=""><div class="timeline-card-kicker ${color}">${m.category} · ${m.year}</div><h3>${m.title}</h3><p>${m.place}</p><span>♡</span>`;
+                card.addEventListener('click', () => openTimelineModal(m.id));
+                const yearNode = document.createElement('div');
+                yearNode.className = `timeline-year${m.added ? ' timeline-year-added' : ''}`;
+                yearNode.style.left = `${dotLeft}px`;
+                yearNode.innerHTML = `<b></b><span>${m.year}</span>`;
+                stage.append(card, yearNode);
+            });
+        }
+        function closeModal() { modal.classList.remove('active') }
+        function openTimelineMemoryForm() {
+            const form = document.getElementById('timelineAddModal');
+            if (form) form.classList.add('active');
+        }
+        function closeTimelineMemoryForm() {
+            const form = document.getElementById('timelineAddModal');
+            if (form) form.classList.remove('active');
+        }
+        function previewTimelineMemory(event) {
+            const file = event.target.files && event.target.files[0];
+            if (!file || !file.type.startsWith('image/')) return;
+            timelineMemoryImageSrc = URL.createObjectURL(file);
+            const preview = document.getElementById('timelineMemoryPreview');
+            if (preview) preview.src = timelineMemoryImageSrc;
+        }
+        function addTimelineMemory(event) {
+            event.preventDefault();
+            const title = document.getElementById('timelineMemoryTitle').value.trim() || 'Untitled memory';
+            const year = Number(document.getElementById('timelineMemoryYear').value.trim()) || 2026;
+            const category = document.getElementById('timelineMemoryCategory').value.trim() || 'Personal';
+            const place = document.getElementById('timelineMemoryPlace').value.trim() || 'Unknown place';
+            const text = document.getElementById('timelineMemoryText').value.trim() || 'A personal fragment added to my timeline.';
+            timelineMemories.push({ id: nextTimelineMemoryId++, year, category, title, place, text, img: timelineMemoryImageSrc, added: true });
+            renderTimeline();
+            closeTimelineMemoryForm();
+            event.target.reset();
+            timelineMemoryImageSrc = 'https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=700&auto=format&fit=crop';
+            document.getElementById('timelineMemoryPreview').src = timelineMemoryImageSrc;
+        }
+        function openActivityCreate() {
+            const modal = document.getElementById('activityCreateModal');
+            if (modal) modal.classList.add('active');
+        }
+        function closeActivityCreate() {
+            const modal = document.getElementById('activityCreateModal');
+            if (modal) modal.classList.remove('active');
+        }
+        function previewActivityPostImage(event) {
+            const file = event.target.files && event.target.files[0];
+            if (!file || !file.type.startsWith('image/')) return;
+            activityPostImageSrc = URL.createObjectURL(file);
+            const preview = document.getElementById('activityPostPreview');
+            if (preview) preview.src = activityPostImageSrc;
+        }
+        function activityChipClass(type) {
+            const normalized = String(type || '').toLowerCase();
+            if (normalized === 'album') return 'album';
+            if (normalized === 'memory' || normalized === 'object') return 'memory';
+            return 'story';
+        }
+        function addActivityPost(event) {
+            event.preventDefault();
+            const track = document.getElementById('activityTrack');
+            if (!track) return;
+            const type = document.getElementById('activityPostType').value;
+            const title = document.getElementById('activityPostTitle').value.trim() || 'A new shared memory';
+            const place = document.getElementById('activityPostPlace').value.trim() || 'Unknown place';
+            const author = document.getElementById('activityPostAuthor').value.trim() || 'You';
+            const text = document.getElementById('activityPostText').value.trim() || 'A newly shared memory is ready for others to collect, respond to and co-create.';
+            const card = document.createElement('article');
+            card.classList.add('activity-new-post');
+            card.innerHTML = `<div class="activity-card-menu">•••</div><span class="activity-chip ${activityChipClass(type)}">${type}</span><img src="${activityPostImageSrc}" alt=""><div class="activity-author"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=120&auto=format&fit=crop" alt=""><div><strong>${author}</strong><p>Just now · public</p></div></div><h3>${title}</h3><p>${text}</p><div class="activity-location">⌖ ${place}</div><div class="activity-social"><span>👩🏻‍🦱 +1</span><span class="liked">♥ 1</span><span>◯ 0</span></div>`;
+            track.prepend(card);
+            requestAnimationFrame(() => track.scrollTo({ left: 0, behavior: 'smooth' }));
+            closeActivityCreate();
+            event.target.reset();
+            activityPostImageSrc = 'https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?q=80&w=900&auto=format&fit=crop';
+            document.getElementById('activityPostPreview').src = activityPostImageSrc;
+        }
+        function handleMemoryUpload(event) {
+            const file = event.target.files && event.target.files[0];
+            if (!file) return;
+            if (file.type.startsWith('image/')) {
+                const url = URL.createObjectURL(file);
+                uploadPreview.src = url;
+                uploadPreview.classList.add('uploaded');
+                const shelfImage = document.getElementById('shelfImg');
+                if (shelfImage) shelfImage.src = url;
+            }
+        }
+        function resetUpload() {
+            const uploadInput = document.getElementById('memoryUpload');
+            const preview = document.getElementById('uploadPreview');
+            const shelfImage = document.getElementById('shelfImg');
+            if (uploadInput) uploadInput.value = '';
+            if (preview) {
+                preview.src = defaultUploadSrc;
+                preview.classList.remove('uploaded');
+            }
+            if (shelfImage) shelfImage.src = defaultUploadSrc;
+        }
+        function analyse() {
+            const shelf = document.getElementById('memoryShelf');
+            if (shelf) shelf.classList.add('active');
+            showView('shelf');
+        }
+        function revealBlindBox() {
+            const mystery = document.getElementById('mysteryCard');
+            const question = document.getElementById('blindQuestion');
+            const image = document.getElementById('blindMatchImage');
+            const kicker = document.getElementById('blindMatchKicker');
+            const title = document.getElementById('blindMatchTitle');
+            const meta = document.getElementById('blindMatchMeta');
+            const score = document.getElementById('blindMatchScore');
+            const exploreBtn = document.getElementById('blindExploreBtn');
+            const revealBtn = document.getElementById('blindRevealBtn');
+            currentBlindBox = (currentBlindBox + 1) % blindBoxes.length;
+            const match = blindBoxes[currentBlindBox];
+            const memory = memories[match.memoryIndex];
+            if (mystery) {
+                mystery.classList.remove('revealed-now');
+                void mystery.offsetWidth;
+                mystery.classList.add('revealed-now');
+            }
+            if (question) question.textContent = match.score;
+            if (image) {
+                image.src = memory.img;
+                image.alt = memory.title;
+            }
+            if (kicker) {
+                kicker.textContent = `${memory.tag} · ${memory.year}`;
+                kicker.className = `timeline-card-kicker ${timelineColorClass(currentBlindBox + 2)}`;
+            }
+            if (title) title.textContent = memory.title;
+            if (meta) meta.textContent = `${memory.place} · ${match.object} · ${match.emotion}`;
+            if (score) score.textContent = `${match.permission} · ${match.contributors}`;
+            const exchangeTitle = document.getElementById('exchangeTheirTitle');
+            if (exchangeTitle) exchangeTitle.textContent = memory.title;
+            setExchangeState('ready', 'Match ready. Request exchange.');
+            if (exploreBtn) exploreBtn.onclick = showMatchedMemory;
+            if (revealBtn) revealBtn.textContent = currentBlindBox === blindBoxes.length - 1 ? 'Restart blind boxes' : 'Open another blind box';
+        }
+        function requestMemoryExchange() {
+            if (currentBlindBox < 0) {
+                setExchangeState('ready', 'Open a blind box first.');
+                return;
+            }
+            setExchangeState('pending', 'Request sent. Waiting for owner.');
+        }
+        function acceptMemoryExchange() {
+            if (currentBlindBox < 0) {
+                setExchangeState('ready', 'Open a blind box first.');
+                return;
+            }
+            setExchangeState('accepted', 'Accepted. Memories connected.');
+        }
+        function completeMemoryExchange() {
+            if (currentBlindBox < 0) {
+                setExchangeState('ready', 'Open a blind box first.');
+                return;
+            }
+            setExchangeState('complete', 'Exchange complete. Added to trail.');
+            window.setTimeout(() => showMatchedMemory(), 350);
+        }
+        function showMatchedMemory() {
+            if (currentBlindBox < 0) revealBlindBox();
+            const match = blindBoxes[Math.max(0, currentBlindBox)];
+            const memory = memories[match.memoryIndex];
+            document.getElementById('matchedMemoryImage').src = memory.img;
+            document.getElementById('matchedMemoryTag').textContent = `${memory.tag} · ${memory.year}`;
+            document.getElementById('matchedMemoryName').textContent = memory.title;
+            document.getElementById('matchedMemoryPlace').textContent = `${memory.place} · ${match.score} match`;
+            showView('matched');
+        }
+        function openMatchedMode(mode) { showView(mode); }
+        function openRoleMode(mode) { showView(mode); }
+        function openBigBenMemory() {
+            showView('ar');
+            selectArMemory(0);
+        }
+        function openTrailExperience() {
+            if (selectedRole === 'Personal User') {
+                showView('ar');
+                return;
+            }
+            const panel = document.getElementById('communityTrailStatus');
+            const button = document.getElementById('trailPrimaryButton');
+            if (selectedRole === 'Community User') {
+                if (button && button.dataset.checkpoint === 'true') {
+                    openBigBenMemory();
+                    return;
+                }
+                if (panel) panel.innerHTML = '<h4>Checkpoint draft created</h4><p>Big Ben · AR beacon · contributor review enabled</p>';
+                if (button) {
+                    button.textContent = 'Preview AR checkpoint';
+                    button.dataset.checkpoint = 'true';
+                    button.classList.add('activity-ready');
+                }
+                return;
+            }
+            if (button && button.dataset.joined === 'true') {
+                openBigBenMemory();
+                return;
+            }
+            if (panel) panel.innerHTML = '<h4>Activity joined</h4><p>Big Ben · public memory walk · live contributions enabled</p>';
+            if (button) {
+                button.textContent = 'Open joined activity';
+                button.dataset.joined = 'true';
+                button.classList.add('activity-ready');
+            }
+        }
+        function renderChatThread() {
+            const container = document.getElementById('chatMessages');
+            if (!container) return;
+            container.innerHTML = chatThreads[activeChatThread].map(message =>
+                `<div class="message ${message.side}">${message.text}</div>`
+            ).join('');
+            container.scrollTop = container.scrollHeight;
+        }
+        function switchChatThread(thread, button) {
+            selectedChatThread = thread;
+            document.querySelectorAll('[data-chat-thread]').forEach(item => item.classList.toggle('active', item === button));
+            const action = document.getElementById('chatRoleAction');
+            if (selectedRole === 'Participant') {
+                if (action) {
+                    const joined = joinedChatThreads.has(thread);
+                    action.textContent = joined ? `Joined · ${button.textContent.trim()}` : `Join · ${button.textContent.trim()}`;
+                    action.classList.toggle('complete', joined);
+                    action.classList.remove('needs-selection');
+                }
+                const container = document.getElementById('chatMessages');
+                if (joinedChatThreads.has(thread)) {
+                    activeChatThread = thread;
+                    renderChatThread();
+                } else if (container) {
+                    container.innerHTML = `<div class="chat-selection-state"><b>${button.textContent.trim()}</b><span>Selected conversation</span><p>Join this conversation to read the full discussion and contribute your memory fragment.</p></div>`;
+                }
+                const input = document.getElementById('chatMessageInput');
+                if (input) {
+                    input.disabled = !joinedChatThreads.has(thread);
+                    input.placeholder = joinedChatThreads.has(thread) ? 'Leave a co-creation note...' : 'Join the conversation to write a note';
+                }
+                return;
+            }
+            activeChatThread = thread;
+            renderChatThread();
+            const input = document.getElementById('chatMessageInput');
+            if (input) input.focus();
+        }
+        function sendChatMessage() {
+            const input = document.getElementById('chatMessageInput');
+            if (!input) return;
+            if (selectedRole === 'Participant' && !joinedChatThreads.has(activeChatThread)) {
+                const action = document.getElementById('chatRoleAction');
+                if (action) {
+                    action.textContent = 'Join this conversation first';
+                    action.classList.add('needs-selection');
+                }
+                return;
+            }
+            const text = input.value.trim();
+            if (!text) return;
+            chatThreads[activeChatThread].push({ side: 'me', text });
+            input.value = '';
+            renderChatThread();
+        }
+        function selectObjectMemory(index, button) {
+            const memory = objectMemories[index];
+            if (!memory) return;
+            document.querySelectorAll('.cutout-object').forEach(item => item.classList.toggle('active', item === button));
+            document.getElementById('objectDetailKicker').textContent = memory.kicker;
+            document.getElementById('objectDetailTitle').textContent = memory.title;
+            document.getElementById('objectDetailText').textContent = memory.text;
+            document.getElementById('objectDetailPeople').textContent = memory.people;
+            const detail = document.getElementById('objectCommunityDetail');
+            detail.classList.remove('detail-changed');
+            void detail.offsetWidth;
+            detail.classList.add('detail-changed');
+        }
+        function runSecretMatch() {
+            const button = document.getElementById('secretMatchButton');
+            const text = document.getElementById('secretMatchText');
+            const code = document.getElementById('secretCode');
+            const cover = document.getElementById('roleMemoryCover');
+            if (button) button.textContent = 'Match revealed';
+            if (text) text.textContent = '92% connection found through place, childhood objects and shared nostalgia.';
+            if (code) code.textContent = 'MATCH–92%';
+            if (cover) {
+                cover.classList.remove('revealed');
+                void cover.offsetWidth;
+                cover.classList.add('revealed');
+            }
+        }
+        function selectPermission(button) {
+            document.querySelectorAll('#personalPermissions button').forEach(item => item.classList.toggle('active', item === button));
+        }
+        function completePersonalFlow(mode) { showView(mode); }
+        function advanceCommunityFlow(step) {
+            communityFlowStep = step;
+            const labels = [
+                '',
+                'Step 1 of 5 · Event draft ready',
+                'Step 2 of 5 · 12 memories collected',
+                'Step 3 of 5 · AI found 7 overlaps',
+                'Step 4 of 5 · Shared memory generated',
+                'Step 5 of 5 · Timeline, Map and Object are ready'
+            ];
+            document.getElementById('communityFlowStatus').textContent = labels[step];
+            document.querySelectorAll('.community-step').forEach(card => {
+                card.classList.toggle('active', Number(card.dataset.communityStep) <= step);
+            });
+            if (step === 2) window.setTimeout(() => showView('relations'), 250);
+            if (step === 3 || step === 4) window.setTimeout(() => showView('memoryfusion'), 250);
+            if (step === 5) window.setTimeout(() => showView('timeline'), 250);
+        }
+        function collectMemory() { const btn = document.getElementById('collectBtn'); btn.textContent = 'Collected'; btn.classList.add('collected') }
+        function selectArMemory(i) {
+            currentArMemory = i;
+            const m = arMemories[i];
+            arMemoryKicker.textContent = m.kicker;
+            arMemoryTitle.textContent = m.title;
+            arMemoryMeta.textContent = m.meta;
+            arMemoryText.textContent = m.text;
+            arStatus.textContent = m.status;
+            collectBtn.textContent = 'Collect';
+            collectBtn.classList.remove('collected');
+            document.querySelectorAll('.ar-hotspot').forEach((h, index) => h.classList.toggle('active', index === i));
+            document.querySelectorAll('.ar-mini-map span').forEach((dot, index) => dot.classList.toggle('active', index === i));
+        }
+        function nextArMemory() {
+            selectArMemory((currentArMemory + 1) % arMemories.length);
+        }
+        function toggleArSettings() {
+            arSettingsPanel.classList.toggle('active');
+        }
+        function toggleHistoricLayer() {
+            historicLayer.classList.toggle('active');
+            arStatus.textContent = historicLayer.classList.contains('active') ? 'Big Ben AR · Historic layer on' : 'Big Ben AR · Present view';
+            arSettingsPanel.classList.remove('active');
+        }
+        function scanBigBen() {
+            scanSweep.classList.remove('scan-now');
+            void scanSweep.offsetWidth;
+            scanSweep.classList.add('scan-now');
+            arStatus.textContent = 'Big Ben AR · Scanning hotspots';
+            arSettingsPanel.classList.remove('active');
+        }
+        function goAchievementPage(index) {
+            const wall = document.getElementById('achievementWall');
+            if (!wall) return;
+            wall.scrollTo({ left: index * wall.clientWidth, behavior: 'smooth' });
+            document.querySelectorAll('.achievement-dots button').forEach((dot, i) => dot.classList.toggle('active', i === index));
+        }
+        function syncAchievementDots() {
+            const wall = document.getElementById('achievementWall');
+            if (!wall) return;
+            const index = Math.round(wall.scrollLeft / Math.max(1, wall.clientWidth));
+            document.querySelectorAll('.achievement-dots button').forEach((dot, i) => dot.classList.toggle('active', i === index));
+        }
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeContributorProfile();
+            }
+        });
+    </script>
+</body>
+
+</html>
